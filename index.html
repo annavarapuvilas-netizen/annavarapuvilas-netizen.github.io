@@ -238,9 +238,9 @@ footer { background: var(--paper); padding-block: 28px calc(28px + env(safe-area
 .rv-snaps img{display:block;width:100%;aspect-ratio:3/2;object-fit:cover;border:var(--line) solid var(--ink);border-radius:4px}
 .rv-media .vert{align-self:center}
 @media(max-width:760px){.rv-media{grid-template-columns:1fr}.rv-media .vert{max-width:340px;align-self:start}.rv-snaps{grid-template-columns:1fr 1fr}}
-.gpi-video{margin:28px 0 0;max-width:760px}
+.gpi-video{margin:28px auto 0;max-width:760px}
 .gpi-video iframe{display:block;width:100%;aspect-ratio:16/9;border:var(--line) solid var(--ink);border-radius:6px;background:#000}
-.gpi-video figcaption{font-family:'Caveat',cursive;font-size:1.2rem;color:var(--mute);margin-top:8px}
+.gpi-video figcaption{font-family:'Caveat',cursive;font-size:1.2rem;color:var(--mute);margin-top:8px;text-align:center}
 .rv-media .rv-ribbon{display:block;width:100%;aspect-ratio:3/2;object-fit:cover;margin-top:20px;border:var(--line) solid var(--ink);border-radius:4px}
 body,button,.btn{text-transform:lowercase}
 
@@ -283,6 +283,9 @@ section.riverside.band{overflow:clip}
 .stop-label{font-family:'Caveat',cursive;font-size:1.4rem;line-height:1.1;color:var(--terra);margin:0}
 .stop h3.stop-title{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(1.8rem,3.4vw,2.4rem);line-height:1.1;margin:2px 0 10px}
 .stop-text{max-width:60ch;margin:0 0 22px}
+.stop-head{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:32px;align-items:center;margin-bottom:22px}
+.stop-head .stop-text{margin-bottom:0}
+.line-art{display:block;width:100%;height:auto}
 .trail-intro{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:32px;align-items:start}
 .trail-hint{font-family:'Caveat',cursive;font-size:1.4rem;color:var(--terra);margin:0}
 .ph{margin:0}
@@ -297,8 +300,7 @@ section.riverside.band{overflow:clip}
 .ph-2 .fr.tall{aspect-ratio:3/4}
 .ph-eq{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .ph-eq .fr{aspect-ratio:4/3}
-.writing-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,340px);gap:22px;align-items:start;max-width:1040px}
-.gpi-writing{max-width:none}
+.gpi-writing{max-width:760px}
 .dest{padding-bottom:0}
 .sun{position:absolute;right:0;top:-8px;width:84px;height:84px}
 .js .sun{opacity:0;transform:translateY(26px) scale(.9);transition:opacity .9s,transform .9s}
@@ -321,7 +323,8 @@ section.riverside.band{overflow:clip}
   .ph-2 .fill .fr{flex:none;height:auto;min-height:0;aspect-ratio:4/3}
   .ph-2 .ph:not(.fill){max-width:260px}
   .ph-eq{grid-template-columns:1fr}
-  .writing-row{grid-template-columns:1fr}
+  .stop-head{grid-template-columns:1fr;gap:16px}
+  .line-art{max-width:240px}
   .sun{width:60px;height:60px}
 }
 .creds{margin:-.3rem 0 1.5rem;font:600 1.5rem/1.2 var(--hand);color:var(--terra)}
@@ -502,9 +505,35 @@ section.riverside.band{overflow:clip}
 </div>
 </div>
 <div class="stop">
+<div class="stop-head">
+<div>
 <p class="stop-label">stop 1 · policy research</p>
 <h3 class="stop-title">Starting with the evidence</h3>
 <p class="stop-text">The work began with reading and research: what a clean energy transition could mean for communities across Mississippi, and how carbon management policy actually gets made.</p>
+</div>
+<svg class="line-art" viewBox="0 0 280 200" role="img" aria-label="Line drawing of an open book and a magnifying glass over a bar chart" focusable="false">
+<g fill="none" stroke="#3a2d3c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+<path d="M26 128 Q82 108 140 128 L140 178 Q82 158 26 178 Z" fill="#fff8f6"/>
+<path d="M140 128 Q198 108 254 128 L254 178 Q198 158 140 178 Z" fill="#fdecef"/>
+<path d="M140 128 V178"/>
+<path d="M44 140 Q82 128 120 142 M44 152 Q82 140 120 154 M44 164 Q82 152 108 164"/>
+<path d="M160 142 Q198 128 236 140 M160 154 Q198 140 236 152 M160 166 Q198 152 220 162"/>
+<circle cx="176" cy="68" r="46" fill="#d5eae8"/>
+<path d="M209 101 L252 144" stroke-width="7"/>
+<path d="M209 101 L252 144" stroke="#fbe3a8" stroke-width="3.4"/>
+<rect x="146" y="74" width="14" height="30" fill="#fbe3a8"/>
+<rect x="168" y="58" width="14" height="46" fill="#f4c4cb"/>
+<rect x="190" y="46" width="14" height="58" fill="#dbe8d4"/>
+<path d="M140 104 H212"/>
+<path d="M146 62 L172 46 L196 32" stroke="#c4635b"/>
+<path d="M188 32 H196 V40" stroke="#c4635b"/>
+<path d="M60 70 q8 -14 20 -6 q-4 14 -20 6 z M60 70 q-6 -10 -2 -22" fill="#dbe8d4"/>
+<path d="M24 36 l0 12 M18 42 l12 0 M250 20 l0 10 M245 25 l10 0" stroke="#c4635b"/>
+<circle cx="110" cy="40" r="4" fill="#fbe3a8"/>
+<circle cx="92" cy="96" r="2.5" fill="#c4635b" stroke="none"/>
+</g>
+</svg>
+</div>
 <div class="ph-3">
 <figure class="ph"><img class="fr" src="photos/cle-podium.jpg" alt="Vilas at a podium at the Kleinman Center for Energy Policy" loading="lazy"><figcaption>at the Kleinman Center for Energy Policy</figcaption></figure>
 <figure class="ph"><img class="fr" src="photos/cle-sej.jpg" alt="Vilas smiling with a blue umbrella in front of the LOVE sculpture" loading="lazy"><figcaption>at the Society of Environmental Journalists conference</figcaption></figure>
@@ -519,7 +548,6 @@ section.riverside.band{overflow:clip}
 <figure class="ph fill"><img class="fr" src="photos/cle-lunch.jpg" alt="Vilas sharing a meal with two colleagues at a table during a gathering" loading="lazy"><figcaption>breaking bread together</figcaption></figure>
 <figure class="ph"><img class="fr tall" src="photos/cle-connect.jpg" alt="A colleague holding the CO2nnect sign for the Carbon Action Alliance's annual event" loading="lazy"><figcaption>CO2nnect, a Carbon Action Alliance event series</figcaption></figure>
 </div>
-<div class="writing-row">
 <div class="gpi-card gpi-writing">
 <h3>Writing and talks</h3>
 <ul class="gpi-list">
@@ -528,8 +556,6 @@ section.riverside.band{overflow:clip}
 <li><span>May 2, 2025 · featured talk</span><a href="https://carbonactionalliance.org/news-events/bridging-communities-and-climate-lessons-from-an-ej-fellowship/" target="_blank" rel="noopener">Bridging Communities and Climate: Lessons from an EJ Fellowship</a></li>
 <li><span>Feb 16, 2024 · about my fellowship</span><a href="https://carbonactionalliance.org/news-events/welcoming-our-first-environmental-justice-fellow/" target="_blank" rel="noopener">Welcoming Our First Environmental Justice Fellow</a></li>
 </ul>
-</div>
-<figure class="ph"><img class="fr" src="photos/cle-talk.jpg" alt="Carbon Action Alliance event graphic for Vilas's talk Bridging Communities and Climate: Lessons from an EJ Fellowship" loading="lazy"><figcaption>my featured talk with the Carbon Action Alliance</figcaption></figure>
 </div>
 </div>
 <div class="stop">
