@@ -291,14 +291,17 @@ section.riverside.band{overflow:clip}
 .intro-ph .fr{aspect-ratio:3/2}
 .ph-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .ph-3 .fr{aspect-ratio:3/4}
+.ph-3.two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:600px}
+.ph-eq.one{grid-template-columns:minmax(0,600px)}
+.dest-wide{margin-top:22px}
+.dest-wide .fr{aspect-ratio:2/1;object-position:50% 62%}
 .ph-2{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:14px;align-items:stretch;margin-bottom:26px}
 .ph-2 .ph{display:flex;flex-direction:column}
 .ph-2 .fill .fr{flex:1;height:0;min-height:220px;object-position:50% 35%}
 .ph-2 .fr.tall{aspect-ratio:3/4}
 .ph-eq{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .ph-eq .fr{aspect-ratio:4/3}
-.writing-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,340px);gap:22px;align-items:start;max-width:1040px}
-.gpi-writing{max-width:none}
+.gpi-writing{max-width:760px}
 .dest{padding-bottom:0}
 .sun{position:absolute;right:0;top:-8px;width:84px;height:84px}
 .js .sun{opacity:0;transform:translateY(26px) scale(.9);transition:opacity .9s,transform .9s}
@@ -315,13 +318,11 @@ section.riverside.band{overflow:clip}
   .trail-intro{grid-template-columns:1fr}
   .intro-ph{max-width:320px}
   .ph-3{grid-template-columns:1fr 1fr}
-  .ph-3 .ph:nth-child(3){grid-column:1/-1}
-  .ph-3 .ph:nth-child(3) .fr{aspect-ratio:4/3}
+  .ph-3.two{max-width:none}
   .ph-2{grid-template-columns:1fr}
   .ph-2 .fill .fr{flex:none;height:auto;min-height:0;aspect-ratio:4/3}
   .ph-2 .ph:not(.fill){max-width:260px}
   .ph-eq{grid-template-columns:1fr}
-  .writing-row{grid-template-columns:1fr}
   .sun{width:60px;height:60px}
 }
 .creds{margin:-.3rem 0 1.5rem;font:600 1.5rem/1.2 var(--hand);color:var(--terra)}
@@ -387,7 +388,7 @@ section.riverside.band{overflow:clip}
 <div class="wrap stats-in">
 <div class="stat"><span class="num"><svg class="ring" viewBox="0 0 200 90" preserveAspectRatio="none" aria-hidden="true"><path d="M14 44C10 16 62 6 110 10C160 14 190 36 174 62C152 86 52 90 22 68C12 60 10 52 14 40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg><strong>20+</strong></span><span class="t">community organizations united behind Mississippi's first Just Transition plan</span></div>
 <div class="stat"><span class="num"><svg class="ring" viewBox="0 0 200 90" preserveAspectRatio="none" aria-hidden="true"><path d="M14 44C10 16 62 6 110 10C160 14 190 36 174 62C152 86 52 90 22 68C12 60 10 52 14 40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg><strong>$200K+</strong></span><span class="t">raised to launch a worker-owned coffeehouse</span></div>
-<div class="stat"><span class="num"><svg class="ring" viewBox="0 0 200 90" preserveAspectRatio="none" aria-hidden="true"><path d="M14 44C10 16 62 6 110 10C160 14 190 36 174 62C152 86 52 90 22 68C12 60 10 52 14 40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg><strong>5</strong></span><span class="t">places where I've written clean energy policy: Mississippi, Texas, Colorado, Minnesota and China</span></div>
+<div class="stat"><span class="num"><svg class="ring" viewBox="0 0 200 90" preserveAspectRatio="none" aria-hidden="true"><path d="M14 44C10 16 62 6 110 10C160 14 190 36 174 62C152 86 52 90 22 68C12 60 10 52 14 40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg><strong>5+</strong></span><span class="t">years in education as a 6th grade computer science teacher, E-STEAM summer camp principal, and entrepreneurship educator</span></div>
 </div>
 </section>
 <section class="riverside band" id="riverside">
@@ -505,10 +506,9 @@ section.riverside.band{overflow:clip}
 <p class="stop-label">stop 1 · policy research</p>
 <h3 class="stop-title">Starting with the evidence</h3>
 <p class="stop-text">The work began with reading and research: what a clean energy transition could mean for communities across Mississippi, and how carbon management policy actually gets made.</p>
-<div class="ph-3">
+<div class="ph-3 two">
 <figure class="ph"><img class="fr" src="photos/cle-podium.jpg" alt="Vilas at a podium at the Kleinman Center for Energy Policy" loading="lazy"><figcaption>at the Kleinman Center for Energy Policy</figcaption></figure>
 <figure class="ph"><img class="fr" src="photos/cle-sej.jpg" alt="Vilas smiling with a blue umbrella in front of the LOVE sculpture" loading="lazy"><figcaption>at the Society of Environmental Journalists conference</figcaption></figure>
-<figure class="ph"><img class="fr" src="photos/cle-results.jpg" alt="Vilas standing in front of a wall of posted pages mapping the Mississippi clean energy work" loading="lazy"><figcaption>mapping the Mississippi work at the Rising Leaders for Results seminar</figcaption></figure>
 </div>
 </div>
 <div class="stop">
@@ -519,7 +519,6 @@ section.riverside.band{overflow:clip}
 <figure class="ph fill"><img class="fr" src="photos/cle-lunch.jpg" alt="Vilas sharing a meal with two colleagues at a table during a gathering" loading="lazy"><figcaption>breaking bread together</figcaption></figure>
 <figure class="ph"><img class="fr tall" src="photos/cle-connect.jpg" alt="A colleague holding the CO2nnect sign for the Carbon Action Alliance's annual event" loading="lazy"><figcaption>CO2nnect, a Carbon Action Alliance event series</figcaption></figure>
 </div>
-<div class="writing-row">
 <div class="gpi-card gpi-writing">
 <h3>Writing and talks</h3>
 <ul class="gpi-list">
@@ -529,16 +528,13 @@ section.riverside.band{overflow:clip}
 <li><span>Feb 16, 2024 · about my fellowship</span><a href="https://carbonactionalliance.org/news-events/welcoming-our-first-environmental-justice-fellow/" target="_blank" rel="noopener">Welcoming Our First Environmental Justice Fellow</a></li>
 </ul>
 </div>
-<figure class="ph"><img class="fr" src="photos/cle-talk.jpg" alt="Carbon Action Alliance event graphic for Vilas's talk Bridging Communities and Climate: Lessons from an EJ Fellowship" loading="lazy"><figcaption>my featured talk with the Carbon Action Alliance</figcaption></figure>
-</div>
 </div>
 <div class="stop">
 <p class="stop-label">stop 3 · climate education</p>
 <h3 class="stop-title">Learning out loud, together</h3>
 <p class="stop-text">Climate learning sessions with Mississippi People's Movement members, from what an electric future could look like to the community's own priorities.</p>
-<div class="ph-eq">
+<div class="ph-eq one">
 <figure class="ph"><img class="fr" src="photos/cle-convening-talk.jpg" alt="Vilas speaking into a microphone in front of a hand-drawn road map of the movement's year" loading="lazy"><figcaption>at the Climate Learning Convening</figcaption></figure>
-<figure class="ph"><img class="fr" src="photos/cle-visioning.jpg" alt="Vilas speaking during a visioning exercise at a climate learning session, seated beside a community member" loading="lazy"><figcaption>a visioning exercise with Mississippi People's Movement members</figcaption></figure>
 </div>
 <figure class="gpi-video"><iframe src="https://www.youtube-nocookie.com/embed/8kkeWGY5qzw" title="Climate Learning Convening Recap!" loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe><figcaption>Climate Learning Convening recap</figcaption></figure>
 </div>
@@ -561,6 +557,7 @@ section.riverside.band{overflow:clip}
 </div>
 <figure class="ph fill"><img class="fr" src="photos/cle-group-mural.jpg" alt="Vilas and Mississippi People's Movement members in matching navy shirts in front of a mural" loading="lazy"><figcaption>with Mississippi People's Movement members</figcaption></figure>
 </div>
+<figure class="ph dest-wide"><img class="fr" src="photos/ms-landscape.jpg" alt="Three people leaning on a car on a dirt road beside a white fence under a big Mississippi sky" loading="lazy"></figure>
 </div>
 </div>
 </div>
