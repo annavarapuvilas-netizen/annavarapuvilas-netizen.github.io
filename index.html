@@ -276,7 +276,7 @@ section.riverside.band{overflow:clip}
 .trail-rail{position:absolute;left:0;top:0;width:44px;height:100%;overflow:visible;pointer-events:none}
 .trail::before{content:"";position:absolute;left:21px;top:14px;bottom:14px;border-left:var(--line) dashed var(--ink);opacity:.45}
 .js .trail::before{display:none}
-.stop{position:relative;padding-bottom:clamp(52px,7vw,92px)}
+.stop{position:relative;padding-bottom:clamp(30px,4vw,52px)}
 .stop:last-child{padding-bottom:0}
 .stop::before{content:"";position:absolute;left:-51px;top:4px;width:18px;height:18px;box-sizing:border-box;border:var(--line) solid var(--ink);border-radius:50%;background:var(--paper);transition:background .4s,transform .4s}
 .stop.on::before{background:var(--terra);transform:scale(1.25)}
@@ -298,9 +298,12 @@ section.riverside.band{overflow:clip}
 .ph-2 .ph{display:flex;flex-direction:column}
 .ph-2 .fill .fr{flex:1;height:0;min-height:220px;object-position:50% 35%}
 .ph-2 .fr.tall{aspect-ratio:3/4}
-.ph-eq{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.ph-eq .fr{aspect-ratio:4/3}
-.gpi-writing{max-width:760px}
+.media-row{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,4fr);gap:20px;align-items:start}
+.media-row .fr{aspect-ratio:4/3}
+.media-row .gpi-video{margin:0;max-width:none}
+.gpi-writing{max-width:none}
+.stop-split{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:32px;align-items:start}
+.stop-split .stop-text{margin-bottom:0}
 .dest{padding-bottom:0}
 .sun{position:absolute;right:0;top:-8px;width:84px;height:84px}
 .js .sun{opacity:0;transform:translateY(26px) scale(.9);transition:opacity .9s,transform .9s}
@@ -317,12 +320,12 @@ section.riverside.band{overflow:clip}
   .trail-intro{grid-template-columns:1fr}
   .intro-ph{max-width:320px}
   .ph-3{grid-template-columns:1fr 1fr}
-  .ph-3 .ph:nth-child(3){grid-column:1/-1}
-  .ph-3 .ph:nth-child(3) .fr{aspect-ratio:4/3}
+  .ph-3 .ph:nth-child(3){grid-column:1/-1;justify-self:center;width:calc(50% - 7px)}
   .ph-2{grid-template-columns:1fr}
   .ph-2 .fill .fr{flex:none;height:auto;min-height:0;aspect-ratio:4/3}
   .ph-2 .ph:not(.fill){max-width:260px}
-  .ph-eq{grid-template-columns:1fr}
+  .media-row{grid-template-columns:1fr}
+  .stop-split{grid-template-columns:1fr;gap:18px}
   .stop-head{grid-template-columns:1fr;gap:16px}
   .line-art{max-width:240px}
   .sun{width:60px;height:60px}
@@ -359,6 +362,7 @@ section.riverside.band{overflow:clip}
 <button class="drawer-x" type="button">Close</button>
 <p class="note">more to explore</p>
 <a href="#riverside">Riverside</a>
+<a href="#gpi">Great Plains Institute</a>
 <a href="#press">At UVA</a>
 <a href="#photography">Photography</a>
 <a href="#education">Education</a>
@@ -509,7 +513,7 @@ section.riverside.band{overflow:clip}
 <div>
 <p class="stop-label">stop 1 · policy research</p>
 <h3 class="stop-title">Starting with the evidence</h3>
-<p class="stop-text">The work began with reading and research: what a clean energy transition could mean for communities across Mississippi, and how carbon management policy actually gets made.</p>
+<p class="stop-text">I began with reading, research, and asking questions. How could a clean energy transition benefit people across Mississippi?</p>
 </div>
 <svg class="line-art" viewBox="0 0 280 200" role="img" aria-label="Line drawing of an open book and a magnifying glass over a bar chart" focusable="false">
 <g fill="none" stroke="#3a2d3c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
@@ -541,12 +545,11 @@ section.riverside.band{overflow:clip}
 </div>
 </div>
 <div class="stop">
+<div class="stop-split">
+<div>
 <p class="stop-label">stop 2 · building coalitions</p>
 <h3 class="stop-title">Many paths into one</h3>
 <p class="stop-text">Alongside Mississippi People's Movement members and the Carbon Action Alliance, the work was about connecting people, and getting community voices into clean energy policy.</p>
-<div class="ph-2">
-<figure class="ph fill"><img class="fr" src="photos/cle-lunch.jpg" alt="Vilas sharing a meal with two colleagues at a table during a gathering" loading="lazy"><figcaption>breaking bread together</figcaption></figure>
-<figure class="ph"><img class="fr tall" src="photos/cle-connect.jpg" alt="A colleague holding the CO2nnect sign for the Carbon Action Alliance's annual event" loading="lazy"><figcaption>CO2nnect, a Carbon Action Alliance event series</figcaption></figure>
 </div>
 <div class="gpi-card gpi-writing">
 <h3>Writing and talks</h3>
@@ -558,15 +561,15 @@ section.riverside.band{overflow:clip}
 </ul>
 </div>
 </div>
+</div>
 <div class="stop">
 <p class="stop-label">stop 3 · climate education</p>
 <h3 class="stop-title">Learning out loud, together</h3>
 <p class="stop-text">Climate learning sessions with Mississippi People's Movement members, from what an electric future could look like to the community's own priorities.</p>
-<div class="ph-eq">
-<figure class="ph"><img class="fr" src="photos/cle-convening-talk.jpg" alt="Vilas speaking into a microphone in front of a hand-drawn road map of the movement's year" loading="lazy"><figcaption>at the Climate Learning Convening</figcaption></figure>
+<div class="media-row">
 <figure class="ph"><img class="fr" src="photos/cle-visioning.jpg" alt="Vilas speaking during a visioning exercise at a climate learning session, seated beside a community member" loading="lazy"><figcaption>a visioning exercise with Mississippi People's Movement members</figcaption></figure>
-</div>
 <figure class="gpi-video"><iframe src="https://www.youtube-nocookie.com/embed/8kkeWGY5qzw" title="Climate Learning Convening Recap!" loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe><figcaption>Climate Learning Convening recap</figcaption></figure>
+</div>
 </div>
 <div class="stop dest">
 <svg class="sun" viewBox="0 0 84 84" aria-hidden="true" focusable="false"><circle cx="42" cy="42" r="16" fill="#fbe3a8" stroke="#3a2d3c" stroke-width="1.6"/><g stroke="#3a2d3c" stroke-width="1.6" stroke-linecap="round"><path d="M42 8v10M42 66v10M8 42h10M66 42h10M18 18l7 7M59 59l7 7M66 18l-7 7M25 59l-7 7"/></g></svg>
@@ -627,6 +630,7 @@ section.riverside.band{overflow:clip}
 <a href="photos/p1110103.jpg" target="_blank" rel="noopener"><img src="photos/p1110103.jpg" alt="Photograph by Vilas Annavarapu" loading="lazy" decoding="async"></a>
 <a href="photos/p1130282.jpg" target="_blank" rel="noopener"><img src="photos/p1130282.jpg" alt="Photograph by Vilas Annavarapu" loading="lazy" decoding="async"></a>
 <a href="photos/p1130299.jpg" target="_blank" rel="noopener"><img src="photos/p1130299.jpg" alt="Photograph by Vilas Annavarapu" loading="lazy" decoding="async"></a>
+<a href="photos/fireworks-hand.jpg" target="_blank" rel="noopener"><img src="photos/fireworks-hand.jpg" alt="Photograph by Vilas Annavarapu" loading="lazy" decoding="async"></a>
 <a href="photos/p1140915.jpg" target="_blank" rel="noopener"><img src="photos/p1140915.jpg" alt="Photograph by Vilas Annavarapu" loading="lazy" decoding="async"></a>
 <a href="photos/p1140938.jpg" target="_blank" rel="noopener"><img src="photos/p1140938.jpg" alt="Photograph by Vilas Annavarapu" loading="lazy" decoding="async"></a>
 <a href="photos/p1140942.jpg" target="_blank" rel="noopener"><img src="photos/p1140942.jpg" alt="Photograph by Vilas Annavarapu" loading="lazy" decoding="async"></a>
@@ -636,6 +640,7 @@ section.riverside.band{overflow:clip}
 <a href="photos/p1150041.jpg" target="_blank" rel="noopener"><img src="photos/p1150041.jpg" alt="Photograph by Vilas Annavarapu" loading="lazy" decoding="async"></a>
 <a href="photos/p1150049.jpg" target="_blank" rel="noopener"><img src="photos/p1150049.jpg" alt="Photograph by Vilas Annavarapu" loading="lazy" decoding="async"></a>
 <a href="photos/p1150168.jpg" target="_blank" rel="noopener"><img src="photos/p1150168.jpg" alt="Photograph by Vilas Annavarapu" loading="lazy" decoding="async"></a>
+<a href="photos/fireworks-fountain.jpg" target="_blank" rel="noopener"><img src="photos/fireworks-fountain.jpg" alt="Photograph by Vilas Annavarapu" loading="lazy" decoding="async"></a>
 <a href="photos/p1150217.jpg" target="_blank" rel="noopener"><img src="photos/p1150217.jpg" alt="Photograph by Vilas Annavarapu" loading="lazy" decoding="async"></a>
 <a href="photos/p1150239.jpg" target="_blank" rel="noopener"><img src="photos/p1150239.jpg" alt="Photograph by Vilas Annavarapu" loading="lazy" decoding="async"></a>
 <a href="photos/p1150259.jpg" target="_blank" rel="noopener"><img src="photos/p1150259.jpg" alt="Photograph by Vilas Annavarapu" loading="lazy" decoding="async"></a>
