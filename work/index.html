@@ -90,7 +90,8 @@ h1{max-width:62ch;font-size:clamp(15px,1.6vw,17px);line-height:1.5;font-weight:4
 .sec-head h2{font-size:14px;line-height:18px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;white-space:nowrap}
 .sec-head .rule{flex:1 1 auto;height:1px;background:var(--ink)}
 .sec-head .n{font-size:14px;font-variant-numeric:tabular-nums;color:var(--mute)}
-.sec-text{max-width:76ch;margin:-2px 0 14px;font-size:15px;line-height:1.5;color:var(--mute)}
+.sec-text strong{font-weight:600;color:var(--ink)}
+.sec-text{margin:-2px 0 14px;font-size:15px;line-height:1.5;color:var(--mute)}
 .grid{display:grid;gap:12px;grid-template-columns:minmax(0,1fr)}
 .grid.dense{grid-template-columns:repeat(2,minmax(0,1fr))}
 
@@ -250,11 +251,11 @@ h1{max-width:62ch;font-size:clamp(15px,1.6vw,17px);line-height:1.5;font-weight:4
 
   /* Edit this list to change the site. Sections appear in this order. */
   var SECTIONS = [
-    { id: 'antora', label: 'Antora-specific materials', text: 'Antora’s design document is an easy visual guide for people unfamiliar with HeatCore and the Power Block. The policy memo is written for Antora’s C-suite and builds an argument for a set of recommendations.' },
-    { id: 'deck',   label: 'Slide decks', text: '“Gender in green finance for rural revitalization” emphasizes process. My team wanted UNDP China and our review panel to understand how we made choices in our research. “Equity and justice in critical mineral supply chains” and “Environmental justice fellowship lunch and learn” are decks built for presenting. Their emphasis on visuals helps the audience follow my storytelling. “Net-zero strategies for Mexico City” is a deck meant to be read, not presented. It builds an argument.' },
-    { id: 'video',  label: 'Videos', text: 'The Climate Learning Convening video is for carbon management professionals who want to understand the concerns of community members and learn about effective community engagement. The interviews at CO2NNECT highlight the audience’s experience. The Riverside Collective video is meant to increase volunteer involvement and raise philanthropic dollars.' },
-    { id: 'writing',label: 'Writing', text: 'The Riverside newsletters are personal and story-based, with the goal of making readers feel personally bought in to the project. The blog posts for the Carbon Action Alliance are informational and use narrative to uplift key messages. The Just Transition Plan uses bright colors, bold fonts and motifs to improve readability while explaining the process and communicating policy ideas.' },
-    { id: 'social', label: 'Social media', text: 'The reels are fun and playful, and they build excitement about an up-and-coming business. They feature the students, who are the heart of Riverside.', dense: true }
+    { id: 'antora', label: 'Antora-specific materials', text: 'Antora’s **design document** is an easy visual guide for people unfamiliar with HeatCore and the Power Block. The **policy memo** is written for Antora’s C-suite and builds an argument for a set of recommendations.' },
+    { id: 'deck',   label: 'Slide decks', text: '**“Gender in green finance for rural revitalization”** emphasizes process. My team wanted UNDP China and our review panel to understand how we made choices in our research. **“Equity and justice in critical mineral supply chains”** and **“Environmental justice fellowship lunch and learn”** are decks built for presenting. Their emphasis on visuals helps the audience follow my storytelling. **“Net-zero strategies for Mexico City”** is a deck meant to be read, not presented. It builds an argument.' },
+    { id: 'video',  label: 'Videos', text: 'The **Climate Learning Convening video** is for carbon management professionals who want to understand the concerns of community members and learn about effective community engagement. The **interviews at CO2NNECT** highlight the audience’s experience. The **Riverside Collective video** is meant to increase volunteer involvement and raise philanthropic dollars.' },
+    { id: 'writing',label: 'Writing', text: 'The **Riverside newsletters** are personal and story-based, with the goal of making readers feel personally bought in to the project. The **blog posts** for the Carbon Action Alliance are informational and use narrative to uplift key messages. The **Just Transition Plan** uses bright colors, bold fonts and motifs to improve readability while explaining the process and communicating policy ideas.' },
+    { id: 'social', label: 'Social media', text: 'The **reels** are fun and playful, and they build excitement about an up-and-coming business. They feature the students, who are the heart of Riverside.', dense: true }
   ];
 
   var WORK = [
@@ -351,7 +352,7 @@ h1{max-width:62ch;font-size:clamp(15px,1.6vw,17px);line-height:1.5;font-weight:4
   SECTIONS.forEach(function (sec) {
     var items = WORK.filter(function (w) { return w.s === sec.id; });
     if (!items.length) return;
-    html += '<section class="group"><div class="wrap"><div class="sec-head"><h2>' + esc(sec.label) + '</h2><span class="rule"></span><span class="n">' + items.length + '</span></div>' + (sec.text ? '<p class="sec-text">' + esc(sec.text) + '</p>' : '') + '<div class="grid' + (sec.dense ? ' dense' : '') + '">';
+    html += '<section class="group"><div class="wrap"><div class="sec-head"><h2>' + esc(sec.label) + '</h2><span class="rule"></span><span class="n">' + items.length + '</span></div>' + (sec.text ? '<p class="sec-text">' + esc(sec.text).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>') + '</p>' : '') + '<div class="grid' + (sec.dense ? ' dense' : '') + '">';
     items.forEach(function (w) {
       html += '<a class="card' + (w.span2 ? ' span2' : '') + (w.compact ? ' compact' : '') + '" data-id="' + w.id + '" style="--pos:' + w.pos.toFixed(3) + ';--lit-rgb:' + w.rgb + '" href="' + esc(w.url) + '" target="_blank" rel="noopener">' +
         '<div class="card-top"><span class="kind">' + esc(w.kind) + '</span><span class="tag">+1 charge</span></div>' +
