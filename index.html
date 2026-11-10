@@ -84,8 +84,13 @@ svg.art { color: var(--ink); overflow: visible; }
 .rv-art { display: flex; gap: 1.25rem; align-items: flex-end; padding-bottom: .5rem; }
 .rv-art svg { width: clamp(72px, 10vw, 120px); height: auto; }
 .rv-lead { font: 500 clamp(1.35rem, 2.8vw, 2rem)/1.3 var(--display); max-width: 40rem; margin: 1.5rem 0 0; }
-.rv-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(32px, 5vw, 72px); margin-top: clamp(36px, 6vw, 64px); align-items: start; }
-.rv-story p { margin: 0 0 1.2em; max-width: 46rem; }
+.rv-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(170px, 300px); gap: clamp(32px, 5vw, 72px); margin-top: clamp(36px, 6vw, 64px); align-items: start; }
+.rv-story p { margin: 0 0 1.2em; max-width: 42rem; }
+.rv-story p:first-child::first-letter { text-transform: uppercase; }
+.rv-art-side { justify-content: center; align-items: flex-start; gap: 1.5rem; padding: .5rem 0 0; }
+.rv-art-side svg { width: clamp(100px, 12vw, 150px); }
+.rv-art-side svg:first-child { transform: rotate(-4deg); }
+.rv-art-side svg:last-child { transform: rotate(5deg); margin-top: 3.5rem; }
 .rv-story p:first-child::first-letter { font: 500 4.2rem/.8 var(--display); float: left; padding: .35rem .6rem 0 0; color: var(--terra); }
 .facts { background: #fff; border: var(--line) solid var(--ink); border-radius: 26px; padding: clamp(22px, 3vw, 34px); box-shadow: 9px 9px 0 var(--rose); }
 .facts h3 { font-size: 2rem; font-style: italic; margin-bottom: 1rem; }
@@ -409,10 +414,6 @@ section.riverside.band{overflow:clip}
 <p class="note">economic mobility</p>
 <h2>Riverside Collective</h2>
 </div>
-<div class="rv-art" aria-hidden="true">
-<svg class="art" viewBox="0 0 140 140"><use href="#cup"/></svg>
-<svg class="art" viewBox="0 0 100 150"><use href="#cone"/></svg>
-</div>
 </div>
 <p class="rv-lead">A worker-owned coffee shop and ice cream bar in South Jackson, Mississippi, run by the students and shaped by our neighbors.</p>
 <div class="rv-grid">
@@ -420,6 +421,10 @@ section.riverside.band{overflow:clip}
 <p>I started working on Riverside Collective during my planning periods at Blackburn Middle School. I saw how my students struggled to understand why their education mattered and the ways systemic disinvestment shaped their lives. Riverside is a worker-owned coffeehouse and student entrepreneurship program in South Jackson designed to show middle and high schoolers how their education can economically transform South Jackson.</p>
 <p>I spent my time building relationships with business leaders, foundations, local government, community groups, and parents to communicate our vision for cooperative economics. I secured a donated building and raised over $200,000 in philanthropic capital. I worked with contractors to fix our plumbing, redo our internal wiring, and install an HVAC system. I learned how to use a chainsaw and cut down overgrown bushes. When I couldn't be on-site, my teammates stepped up. Together, we coordinated transportation for kids, painted a mural, moved furniture, built cabinets, and designed a space that reflected pride in South Jackson. My students learned how to make lattes, develop marketing plans, and make decisions as a team. We opened in July of 2025.</p>
 <p>If you mix hard work with a group of people who care, transformation is inevitable. Riverside is our proof.</p>
+</div>
+<div class="rv-art rv-art-side" aria-hidden="true">
+<svg class="art" viewBox="0 0 140 140"><use href="#cup"/></svg>
+<svg class="art" viewBox="0 0 100 150"><use href="#cone"/></svg>
 </div>
 </div>
 <div class="pillars">
