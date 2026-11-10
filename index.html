@@ -337,6 +337,28 @@ section.riverside.band{overflow:clip}
   .line-art{max-width:240px}
   .sun{width:60px;height:60px}
 }
+/* ---- clean energy: policy and communications ---- */
+.gpi-policy{background:var(--indigo);border-block:var(--line) solid var(--ink)}
+.gpi-policy .note{margin:0 0 4px}
+.pol-row1{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:18px;align-items:stretch;margin-top:8px}
+.pol-stack{display:flex;flex-direction:column;gap:18px}
+.pol-stack .pol-card:last-child{flex:1}
+.pol-row2{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:stretch;margin-top:18px}
+.pol-inner{flex:1;display:flex;margin:6px 0 0}
+.pol-inner .fr{flex:1;height:auto;min-height:240px;object-position:50% 40%}
+.pol-card{display:flex;flex-direction:column}
+.pol-card .gpi-list{margin-top:auto;padding-top:6px}
+.pol-card p:first-of-type{margin-bottom:14px}
+.pol-row2 > .ph{display:flex;flex-direction:column}
+.pol-row2 > .ph .fr{flex:1;height:0;min-height:300px;object-position:50% 30%}
+.pol-row2 > .ph figcaption{margin-top:6px}
+@media(max-width:900px){.pol-row1{grid-template-columns:1fr}.pol-row2{grid-template-columns:1fr 1fr}.pol-row2 > .ph .fr{flex:none;height:auto;min-height:0;aspect-ratio:3/4}.pol-inner .fr{aspect-ratio:3/4;flex:none;height:auto}}
+@media(max-width:560px){.pol-row2{grid-template-columns:1fr}.pol-row2 > .ph .fr{aspect-ratio:4/3}.pol-inner .fr{aspect-ratio:4/3}}
+.stop-split .gpi-video{margin:0;max-width:none}
+.photo-pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}
+.photo-pair .fr{aspect-ratio:4/3}
+.path-close{font:italic 500 clamp(1.3rem,2.4vw,1.7rem)/1.35 var(--display);max-width:48rem;margin:30px 0 0}
+@media(max-width:700px){.photo-pair{grid-template-columns:1fr}}
 .creds{margin:-.3rem 0 1.5rem;font:600 1.5rem/1.2 var(--hand);color:var(--terra)}
 .creds a{color:inherit;text-underline-offset:4px;text-decoration-color:var(--terra)}
 </style>
@@ -483,16 +505,63 @@ section.riverside.band{overflow:clip}
 </div>
 </div>
 </section>
-<section class="gpi band" id="gpi">
+<section class="gpi-policy band" id="gpi">
+<div class="wrap">
+<p class="note">clean energy</p>
+<h2>Great Plains Institute</h2>
+<p class="gpi-lead">I served as the inaugural environmental justice fellow at the Great Plains Institute. I worked on carbon management policy and communication, municipal energy resilience planning, and community engagement.</p>
+<div class="pol-row1">
+<div class="pol-stack">
+<article class="gpi-card pol-card">
+<h3>State roadmaps in Texas and Colorado</h3>
+<p>I met with stakeholders in Texas and Colorado to write environmental justice language into their state carbon management roadmaps. I balanced the health and safety concerns of grassroots organizations with the incentives of developers and the economic priorities of state legislators.</p>
+</article>
+<article class="gpi-card pol-card">
+<h3>The Civic Toolkit</h3>
+<p>I helped launch the Civic Toolkit, a guide for developers on working with communities.</p>
+<ul class="gpi-list">
+<li><a href="https://carbonactionalliance.org/communities/carbon-management-civic-toolkit/" target="_blank" rel="noopener">Carbon Management Civic Toolkit</a></li>
+</ul>
+</article>
+</div>
+<article class="gpi-card pol-card">
+<h3>Writing on community collaboration</h3>
+<p>I wrote blog posts on the Carbon Action Alliance website that outline what high-quality community collaboration looks like.</p>
+<ul class="gpi-list">
+<li><span>Dec 10, 2024 · written by me</span><a href="https://carbonactionalliance.org/news-events/what-i-learned-from-the-mississippi-peoples-movement-aligning-climate-action-with-community-needs/" target="_blank" rel="noopener">What I Learned from the Mississippi People's Movement: Aligning Climate Action with Community Needs</a></li>
+<li><span>Jul 24, 2024 · written by me</span><a href="https://carbonactionalliance.org/news-events/leveraging-community-benefit-frameworks-learnings-from-the-national-academies-conference/" target="_blank" rel="noopener">Leveraging Community Benefit Frameworks: Learnings from the National Academies Conference</a></li>
+<li><span>May 2, 2025 · featured talk</span><a href="https://carbonactionalliance.org/news-events/bridging-communities-and-climate-lessons-from-an-ej-fellowship/" target="_blank" rel="noopener">Bridging Communities and Climate: Lessons from an EJ Fellowship</a></li>
+<li><span>Feb 16, 2024 · about my fellowship</span><a href="https://carbonactionalliance.org/news-events/welcoming-our-first-environmental-justice-fellow/" target="_blank" rel="noopener">Welcoming Our First Environmental Justice Fellow</a></li>
+</ul>
+</article>
+</div>
+<div class="pol-row2">
+<figure class="ph"><img class="fr" src="photos/cle-podium.jpg" alt="Vilas at a podium at the Kleinman Center for Energy Policy" loading="lazy"><figcaption>at the Kleinman Center for Energy Policy</figcaption></figure>
+<article class="gpi-card pol-card">
+<h3>Speaking to journalists</h3>
+<p>I spoke to hundreds of journalists about carbon management at the Society of Environmental Journalists conference.</p>
+<figure class="ph pol-inner"><img class="fr" src="photos/cle-sej.jpg" alt="Vilas smiling with a blue umbrella in front of the LOVE sculpture" loading="lazy"></figure>
+</article>
+<article class="gpi-card pol-card">
+<h3>A consensus on community benefits</h3>
+<p>I facilitated a panel discussion between an NGO, Bold Alliance Nebraska, and an energy company, Tallgrass, on how they reached consensus on a community benefits agreement.</p>
+<ul class="gpi-list">
+<li><a href="https://carbonactionalliance.org/news-events/pipeline-company-environmental-group-explore-unique-partnership-at-co2nnect-2024-conference/" target="_blank" rel="noopener">Pipeline Company, Environmental Group Explore Unique Partnership at CO2NNECT 2024 Conference</a></li>
+</ul>
+</article>
+</div>
+</div>
+</section>
+<section class="gpi band" id="path">
 <div class="wrap">
 <div class="trail" id="trail">
 <svg class="trail-rail" aria-hidden="true" focusable="false"></svg>
 <div class="stop start">
 <div class="trail-intro">
 <div>
-<p class="note">clean energy</p>
-<h2>Great Plains Institute</h2>
-<p class="gpi-lead">As the Environmental Justice Fellow at the Great Plains Institute, I worked with communities across Mississippi to chart a clean energy transition for the state. I worked on environmental justice policy in Texas and Colorado and worked on municipal resilience plans that used solar and storage.</p>
+<p class="note">mississippi</p>
+<h2>A path to a just transition</h2>
+<p class="gpi-lead">Communities across America are skeptical of climate technologies. We need clean energy projects to stop climate change, and we need communities to be bought in. My work in Mississippi was to understand people's concerns about climate. Could we find a shared framework that protected communities and advanced decarbonization?</p>
 </div>
 <figure class="ph intro-ph"><img class="fr" src="photos/cle-team.jpg" alt="Vilas and his Great Plains Institute teammates crowded into an instant photo" loading="lazy"><figcaption>my team at the Great Plains Institute</figcaption></figure>
 </div>
@@ -500,71 +569,49 @@ section.riverside.band{overflow:clip}
 <div class="stop">
 <div class="stop-head">
 <div>
-<p class="stop-label">stop 1 · policy research</p>
-<h3 class="stop-title">Starting with the evidence</h3>
-<p class="stop-text">I began with reading, research, and asking questions. How could a clean energy transition benefit people across Mississippi?</p>
+<p class="stop-label">stop 1 · listening</p>
+<h3 class="stop-title">Seventeen conversations</h3>
+<p class="stop-text">I travelled across the state and spoke to 17 leaders, one-on-one, to understand their views on climate. I learned that people cared about climate, but didn't understand the science or how to mitigate climate change's impacts.</p>
 </div>
-<svg class="line-art" viewBox="0 0 280 200" role="img" aria-label="Line drawing of an open book and a magnifying glass over a bar chart" focusable="false">
+<svg class="line-art" viewBox="0 0 280 200" role="img" aria-label="Line drawing of speech bubbles above a winding road" focusable="false">
 <g fill="none" stroke="#3a2d3c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-<path d="M26 128 Q82 108 140 128 L140 178 Q82 158 26 178 Z" fill="#fff8f6"/>
-<path d="M140 128 Q198 108 254 128 L254 178 Q198 158 140 178 Z" fill="#fdecef"/>
-<path d="M140 128 V178"/>
-<path d="M44 140 Q82 128 120 142 M44 152 Q82 140 120 154 M44 164 Q82 152 108 164"/>
-<path d="M160 142 Q198 128 236 140 M160 154 Q198 140 236 152 M160 166 Q198 152 220 162"/>
-<circle cx="176" cy="68" r="46" fill="#d5eae8"/>
-<path d="M209 101 L252 144" stroke-width="7"/>
-<path d="M209 101 L252 144" stroke="#fbe3a8" stroke-width="3.4"/>
-<rect x="146" y="74" width="14" height="30" fill="#fbe3a8"/>
-<rect x="168" y="58" width="14" height="46" fill="#f4c4cb"/>
-<rect x="190" y="46" width="14" height="58" fill="#dbe8d4"/>
-<path d="M140 104 H212"/>
-<path d="M146 62 L172 46 L196 32" stroke="#c4635b"/>
-<path d="M188 32 H196 V40" stroke="#c4635b"/>
-<path d="M60 70 q8 -14 20 -6 q-4 14 -20 6 z M60 70 q-6 -10 -2 -22" fill="#dbe8d4"/>
-<path d="M24 36 l0 12 M18 42 l12 0 M250 20 l0 10 M245 25 l10 0" stroke="#c4635b"/>
-<circle cx="110" cy="40" r="4" fill="#fbe3a8"/>
-<circle cx="92" cy="96" r="2.5" fill="#c4635b" stroke="none"/>
+<path d="M14 188 C66 134 108 198 158 142 S238 84 268 100" stroke-width="15"/>
+<path d="M14 188 C66 134 108 198 158 142 S238 84 268 100" stroke="#fff8f6" stroke-width="12"/>
+<path d="M14 188 C66 134 108 198 158 142 S238 84 268 100" stroke="#c4635b" stroke-dasharray="6 7"/>
+<path d="M28 14 h80 a10 10 0 0 1 10 10 v26 a10 10 0 0 1 -10 10 h-46 l-14 14 v-14 h-20 a10 10 0 0 1 -10 -10 v-26 a10 10 0 0 1 10 -10 z" fill="#fbe3a8"/>
+<path d="M42 28 h52 M42 40 h34"/>
+<path d="M150 8 h86 a10 10 0 0 1 10 10 v26 a10 10 0 0 1 -10 10 h-12 v14 l-14 -14 h-60 a10 10 0 0 1 -10 -10 v-26 a10 10 0 0 1 10 -10 z" fill="#f4c4cb"/>
+<path d="M164 22 h56 M164 34 h36"/>
+<path d="M116 76 h52 a8 8 0 0 1 8 8 v16 a8 8 0 0 1 -8 8 h-30 l-10 10 v-10 h-12 a8 8 0 0 1 -8 -8 v-16 a8 8 0 0 1 8 -8 z" fill="#dbe8d4"/>
+<path d="M126 88 h38 M126 98 h24"/>
+<path d="M64 152 c-9 -11 -9 -20 0 -25 c9 5 9 14 0 25 z" fill="#c4635b"/>
+<circle cx="64" cy="139" r="2.6" fill="#fff8f6"/>
+<path d="M212 118 c-8 -10 -8 -18 0 -23 c8 5 8 13 0 23 z" fill="#c4635b"/>
+<circle cx="212" cy="106" r="2.4" fill="#fff8f6"/>
+<path d="M18 74 l0 10 M13 79 l10 0 M254 62 l0 10 M249 67 l10 0" stroke="#c4635b"/>
 </g>
 </svg>
-</div>
-<div class="ph-3">
-<figure class="ph"><img class="fr" src="photos/cle-podium.jpg" alt="Vilas at a podium at the Kleinman Center for Energy Policy" loading="lazy"><figcaption>at the Kleinman Center for Energy Policy</figcaption></figure>
-<figure class="ph"><img class="fr" src="photos/cle-sej.jpg" alt="Vilas smiling with a blue umbrella in front of the LOVE sculpture" loading="lazy"><figcaption>at the Society of Environmental Journalists conference</figcaption></figure>
-<figure class="ph"><img class="fr" src="photos/cle-results.jpg" alt="Vilas standing in front of a wall of posted pages mapping the Mississippi clean energy work" loading="lazy"><figcaption>mapping the Mississippi work at the Rising Leaders for Results seminar</figcaption></figure>
 </div>
 </div>
 <div class="stop">
 <div class="stop-split">
 <div>
-<p class="stop-label">stop 2 · building coalitions</p>
-<h3 class="stop-title">Many paths into one</h3>
-<p class="stop-text">I worked with the Mississippi People's Movement and GPI to talk about greenhouse gases, decarbonizing our economy, and the policy pathways we could take to achieve net-zero.</p>
-<figure class="ph split-ph"><img class="fr" src="photos/cle-convening-talk.jpg" alt="Vilas speaking into a microphone in front of a hand-drawn road map of the movement's year" loading="lazy"><figcaption>at the Climate Learning Convening</figcaption></figure>
+<p class="stop-label">stop 2 · convening</p>
+<h3 class="stop-title">The Climate Learning Convening</h3>
+<p class="stop-text">In response, I organized the Climate Learning Convening where I convened more than 20 organizations, from food equity advocates to policymakers. I brought in trusted experts to explain the difference between baseload and intermittent power, ran workshops on greenhouse gas emissions, and facilitated roundtables where we imagined what Mississippi's Clean Energy Economy could look like.</p>
 </div>
-<div class="gpi-card gpi-writing">
-<h3>Writing and talks</h3>
-<ul class="gpi-list">
-<li><span>Dec 10, 2024 · written by me</span><a href="https://carbonactionalliance.org/news-events/what-i-learned-from-the-mississippi-peoples-movement-aligning-climate-action-with-community-needs/" target="_blank" rel="noopener">What I Learned from the Mississippi People's Movement: Aligning Climate Action with Community Needs</a></li>
-<li><span>Jul 24, 2024 · written by me</span><a href="https://carbonactionalliance.org/news-events/leveraging-community-benefit-frameworks-learnings-from-the-national-academies-conference/" target="_blank" rel="noopener">Leveraging Community Benefit Frameworks: Learnings from the National Academies Conference</a></li>
-<li><span>May 2, 2025 · featured talk</span><a href="https://carbonactionalliance.org/news-events/bridging-communities-and-climate-lessons-from-an-ej-fellowship/" target="_blank" rel="noopener">Bridging Communities and Climate: Lessons from an EJ Fellowship</a></li>
-<li><span>Feb 16, 2024 · about my fellowship</span><a href="https://carbonactionalliance.org/news-events/welcoming-our-first-environmental-justice-fellow/" target="_blank" rel="noopener">Welcoming Our First Environmental Justice Fellow</a></li>
-</ul>
-</div>
-</div>
-</div>
-<div class="stop">
-<p class="stop-label">stop 3 · climate education</p>
-<h3 class="stop-title">Learning out loud</h3>
-<p class="stop-text">I facilitated conversations about community members' priorities and which clean energy technologies could meet their needs.</p>
-<div class="media-row">
-<figure class="ph"><img class="fr" src="photos/cle-visioning.jpg" alt="Vilas speaking during a visioning exercise at a climate learning session, seated beside a community member" loading="lazy"><figcaption>a visioning exercise with Mississippi People's Movement members</figcaption></figure>
 <figure class="gpi-video"><iframe src="https://www.youtube-nocookie.com/embed/8kkeWGY5qzw" title="Climate Learning Convening Recap!" loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe><figcaption>Climate Learning Convening recap</figcaption></figure>
+</div>
+<div class="photo-pair">
+<figure class="ph"><img class="fr" src="photos/cle-convening-talk.jpg" alt="Vilas speaking into a microphone in front of a hand-drawn road map of the movement's year" loading="lazy"><figcaption>at the Climate Learning Convening</figcaption></figure>
+<figure class="ph"><img class="fr" src="photos/cle-visioning.jpg" alt="Vilas speaking during a visioning exercise at a climate learning session, seated beside a community member" loading="lazy"><figcaption>a visioning exercise with Mississippi People's Movement members</figcaption></figure>
 </div>
 </div>
 <div class="stop dest">
 <svg class="sun" viewBox="0 0 84 84" aria-hidden="true" focusable="false"><circle cx="42" cy="42" r="16" fill="#fbe3a8" stroke="#3a2d3c" stroke-width="1.6"/><g stroke="#3a2d3c" stroke-width="1.6" stroke-linecap="round"><path d="M42 8v10M42 66v10M8 42h10M66 42h10M18 18l7 7M59 59l7 7M66 18l-7 7M25 59l-7 7"/></g></svg>
 <p class="stop-label">destination · a just transition</p>
-<h3 class="stop-title">Where the path leads</h3>
+<h3 class="stop-title">Mississippi's first Just Transition Plan</h3>
+<p class="stop-text">The result was the state's first Just Transition Plan. Our plan endorsed a wide range of clean energy technologies as long as they met conditions of safety, transparency, and investment. For carbon management technologies, this is a first-of-a-kind achievement.</p>
 <div class="dest-grid">
 <div class="gpi-card gpi-plan">
 <h3>Mississippi Just Transition Plan</h3>
@@ -580,6 +627,7 @@ section.riverside.band{overflow:clip}
 </div>
 <figure class="ph fill"><img class="fr" src="photos/cle-group-mural.jpg" alt="Vilas and Mississippi People's Movement members in matching navy shirts in front of a mural" loading="lazy"><figcaption>with Mississippi People's Movement members</figcaption></figure>
 </div>
+<p class="path-close">My work is a model for the developers who care about deploying projects the right way. Strong relationships, community investment, and a commitment to transparency are crucial to getting good projects built.</p>
 </div>
 </div>
 </div>
@@ -733,6 +781,3 @@ if(document.fonts&&document.fonts.ready)document.fonts.ready.then(build);window.
 </script>
 </body>
 </html>
-ccc
-co
-comcasdf
