@@ -41,7 +41,12 @@ a{color:inherit}
 /* Stage */
 .stage{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--carbon);color:var(--paper);overflow:hidden;border-bottom:1px solid rgba(255,255,255,.28)}
 .stage::before{content:"";position:absolute;inset:0;background:var(--core);opacity:calc(var(--glow)*.12);pointer-events:none}
-.stage .wrap{position:relative;display:grid;align-items:center;column-gap:24px;row-gap:6px;padding-top:12px;padding-bottom:12px;grid-template-columns:minmax(0,1fr) minmax(0,700px) minmax(0,1fr);grid-template-areas:". core read"}
+.stage .wrap{position:relative;display:grid;align-items:center;column-gap:24px;row-gap:6px;padding-top:12px;padding-bottom:12px;grid-template-columns:minmax(0,1fr) minmax(0,700px) minmax(0,1fr);grid-template-areas:"who core read"}
+.who{grid-area:who;justify-self:start;display:flex;flex-direction:column;gap:3px;min-width:0}
+.who .nm{font-size:15px;line-height:18px;font-weight:600;letter-spacing:.07em;text-transform:uppercase}
+.who .rl{font-size:12px;line-height:16px;color:var(--mute-inv)}
+.who a{align-self:flex-start;margin-top:3px;font-size:12px;line-height:16px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--paper);text-decoration:none;border-bottom:1px solid var(--sun);padding-bottom:1px}
+.who a:hover,.who a:focus-visible{color:var(--sun)}
 .core{grid-area:core;width:100%;height:auto;overflow:visible;display:block}
 .read{grid-area:read;justify-self:end;width:100%;max-width:260px;display:flex;flex-direction:column;align-items:flex-end;gap:6px;min-width:0}
 .meter{display:flex;gap:3px;width:100%;justify-content:flex-end}
@@ -126,6 +131,7 @@ h1{max-width:62ch;font-size:clamp(15px,1.6vw,17px);line-height:1.5;font-weight:4
 
 @media (max-width:759px){
   .stage .wrap{grid-template-columns:minmax(0,1fr);grid-template-areas:"core" "read";row-gap:6px;padding-top:8px;padding-bottom:8px}
+  .who{display:none}
   .core{max-height:62px}
   .core text{display:none}
   .read{max-width:none;flex-direction:row;align-items:center;justify-content:space-between;gap:12px}
@@ -222,6 +228,12 @@ h1{max-width:62ch;font-size:clamp(15px,1.6vw,17px);line-height:1.5;font-weight:4
       <text x="526" y="110" text-anchor="middle">Heat exchanger</text>
       <text x="648" y="112" text-anchor="middle">Heat out</text>
     </svg>
+
+    <div class="who">
+      <span class="nm">Vilas Annavarapu</span>
+      <span class="rl">Content work</span>
+      <a href="https://www.linkedin.com/in/vilas-annavarapu-08a2ab22a/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
 
     <div class="read">
       <div class="meter" id="meter" aria-hidden="true"></div>
