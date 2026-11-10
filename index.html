@@ -365,20 +365,27 @@ section.riverside.band{overflow:clip}
 .press.band,.photo.band,.edu.band,.contact.band{padding-block:clamp(32px,4.5vw,56px)}
 .gpi.band#path{padding-top:clamp(32px,4.5vw,56px)}
 .hero-bio{max-width:44rem;margin:clamp(28px,4vw,48px) 0 0;font:500 clamp(1.5rem,3vw,2.2rem)/1.25 var(--display);color:var(--ink)}
-.hero-path{list-style:none;margin:clamp(28px,4vw,44px) 0 0;padding:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr) minmax(0,.95fr) minmax(0,1.25fr);gap:24px;position:relative}
+.hero-path{list-style:none;margin:clamp(28px,4vw,44px) 0 0;padding:0;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.8fr) minmax(0,.85fr) minmax(0,1.25fr) minmax(0,1fr);gap:20px;position:relative}
 .hero-path::before{content:"";position:absolute;left:11px;right:11px;top:11px;border-top:2px dashed var(--terra)}
 .hero-path li{position:relative;padding-top:46px}
 .hero-path li::before{content:"";position:absolute;left:0;top:0;width:22px;height:22px;border-radius:50%;background:var(--terra);border:var(--line) solid var(--ink)}
 .hp-ic{display:block;height:76px;width:auto;margin:0 0 12px}
-.hero-path b{display:block;font:500 1.45rem/1.15 var(--display);margin:0 0 6px}
-@media(min-width:701px) and (max-width:1100px){.hero-path b{min-height:2.3em}}
+.hero-path b{display:block;font:500 1.3rem/1.15 var(--display);margin:0 0 6px}
+@media(min-width:1001px) and (max-width:1199px){.hero-path b{min-height:2.3em}}
 .hero-path span{display:block;color:var(--mute);max-width:24rem}
 .hero-path li.hp-mini{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:start;gap:4px;padding:0}
 .hero-path li.hp-mini::before{display:none}
 .hero-path .hp-mini span{position:relative;display:block;max-width:none;padding-top:30px;text-align:center;font:600 1.05rem/1.1 var(--hand);color:var(--mute)}
 .hero-path .hp-mini span::before{content:"";position:absolute;left:50%;top:6px;width:10px;height:10px;margin-left:-5px;border-radius:50%;background:var(--rose);border:var(--line) solid var(--ink)}
 @media(max-width:900px){.hero-story{padding-top:44px}}
-@media(max-width:700px){.hero-path{grid-template-columns:1fr;gap:26px}.hero-path::before{left:10px;right:auto;top:10px;bottom:10px;border-top:0;border-left:2px dashed var(--terra)}.hero-path li{padding:0 0 0 46px}.hp-ic{height:60px}.hero-path li.hp-mini{display:flex;flex-direction:column;gap:12px;padding:0}.hero-path .hp-mini span{text-align:left;padding:0 0 0 46px}.hero-path .hp-mini span::before{left:6px;top:3px;margin-left:0}}
+@media(max-width:1000px){.hero-path{grid-template-columns:1fr;gap:26px}.hero-path::before{left:10px;right:auto;top:10px;bottom:10px;border-top:0;border-left:2px dashed var(--terra)}.hero-path li{padding:0 0 0 46px}.hp-ic{height:60px}.hero-path li.hp-mini{display:flex;flex-direction:column;gap:12px;padding:0}.hero-path .hp-mini span{text-align:left;padding:0 0 0 46px}.hero-path .hp-mini span::before{left:6px;top:3px;margin-left:0}}
+.sw{background:var(--rosewash);border-top:var(--line) solid var(--ink)}
+.sw-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(28px,5vw,64px);align-items:start;margin-top:clamp(20px,3vw,32px)}
+.sw-text p{font-size:1.12rem;max-width:40rem;margin:0 0 1.1em}
+.sw-photos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.sw-photos .fr{aspect-ratio:3/4}
+.sw-photos .ph:last-child .fr{object-position:25% 55%}
+@media(max-width:800px){.sw-grid{grid-template-columns:1fr}}
 .creds{margin:-.3rem 0 1.5rem;font:600 1.5rem/1.2 var(--hand);color:var(--terra)}
 .creds a{color:inherit;text-underline-offset:4px;text-decoration-color:var(--terra)}
 </style>
@@ -412,6 +419,7 @@ section.riverside.band{overflow:clip}
 <p class="note">more to explore</p>
 <a href="#riverside">Riverside</a>
 <a href="#gpi">Great Plains Institute</a>
+<a href="#schwarzman">Schwarzman Scholar</a>
 <a href="#press">At UVA</a>
 <a href="#photography">Photography</a>
 <a href="#education">Education</a>
@@ -444,6 +452,7 @@ section.riverside.band{overflow:clip}
 <li class="hp-mini" aria-label="Along the way"><span>Barista</span><span>Tutor</span><span>Community organizer</span></li>
 <li><svg class="hp-ic" viewBox="0 0 140 140" aria-hidden="true" focusable="false"><use href="#cup"/></svg><b>Riverside Collective</b><span>I raised over 200k for a community coffeehouse that launched last year.</span></li>
 <li><svg class="hp-ic" viewBox="0 0 96 80" aria-hidden="true" focusable="false"><g fill="none" stroke="#3a2d3c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 72 C28 48 44 76 62 52 S86 30 90 34" stroke-width="13"/><path d="M8 72 C28 48 44 76 62 52 S86 30 90 34" stroke="#fff8f6" stroke-width="10"/><path d="M8 72 C28 48 44 76 62 52 S86 30 90 34" stroke="#c4635b" stroke-dasharray="5 6"/><path d="M62 30 c-9 -11 -9 -21 0 -26 c9 5 9 15 0 26 z" fill="#c4635b"/><circle cx="62" cy="17" r="2.8" fill="#fff8f6"/><path d="M16 22 l0 10 M11 27 l10 0" stroke="#c4635b"/></g></svg><b>Environmental Justice Fellow</b><span>I convened over 20 organizations to write Mississippi’s first Just Transition Plan.</span></li>
+<li><svg class="hp-ic" viewBox="0 0 96 80" aria-hidden="true" focusable="false"><g fill="none" stroke="#3a2d3c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="40" cy="42" r="28" fill="#d5eae8"/><ellipse cx="40" cy="42" rx="12" ry="28"/><path d="M12 42 h56 M17 27 h46 M17 57 h46"/><path d="M56 12 l22 -8 l16 8 l-22 8 z" fill="#fbe3a8"/><path d="M64 18 v10 c6 4 14 4 20 0 v-10"/><path d="M94 12 v14" stroke="#c4635b"/></g></svg><b>Schwarzman Scholar</b><span>I studied industrial policy and green finance as a Schwarzman Scholar at Tsinghua University.</span></li>
 </ol>
 </div>
 </header>
@@ -661,6 +670,22 @@ section.riverside.band{overflow:clip}
 </div>
 <figure class="ph fill"><img class="fr" src="photos/cle-group-mural.jpg" alt="Vilas and Mississippi People's Movement members in matching navy shirts in front of a mural" loading="lazy"><figcaption>with Mississippi People's Movement members</figcaption></figure>
 </div>
+</div>
+</div>
+</div>
+</section>
+<section class="sw band" id="schwarzman">
+<div class="wrap">
+<p class="note">tsinghua university</p>
+<h2>Schwarzman Scholar</h2>
+<div class="sw-grid">
+<div class="sw-text">
+<p>This past year, as a Schwarzman Scholar at Tsinghua University, I studied how industrial policy and green finance determine who benefits from economic transitions. When clean energy infrastructure raises near-term costs, working-class communities often bear the burden first, and that tension, if not addressed through deliberate policy design, hurts the most vulnerable people.</p>
+<p>I consulted for UNDP on how to integrate gender considerations into their rural green finance deployment. The practical recommendations my team made centered on disaggregated data collection, investment in women’s governance capacity, and qualitative storytelling as a tool to increase climate lending.</p>
+</div>
+<div class="sw-photos">
+<figure class="ph"><img class="fr" src="photos/schwarzman-undp.jpg" alt="Vilas standing beside a colleague in front of the UNDP logo" loading="lazy"><figcaption>at the UNDP office</figcaption></figure>
+<figure class="ph"><img class="fr" src="photos/schwarzman-un-gate.jpg" alt="Vilas standing in front of the United Nations sign at a gated entrance" loading="lazy"><figcaption>at the United Nations</figcaption></figure>
 </div>
 </div>
 </div>
