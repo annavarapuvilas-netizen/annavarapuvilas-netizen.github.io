@@ -84,7 +84,7 @@ svg.art { color: var(--ink); overflow: visible; }
 .rv-art { display: flex; gap: 1.25rem; align-items: flex-end; padding-bottom: .5rem; }
 .rv-art svg { width: clamp(72px, 10vw, 120px); height: auto; }
 .rv-lead { font: 500 clamp(1.35rem, 2.8vw, 2rem)/1.3 var(--display); max-width: 40rem; margin: 1.5rem 0 0; }
-.rv-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(170px, 300px); gap: clamp(32px, 5vw, 72px); margin-top: clamp(36px, 6vw, 64px); align-items: start; }
+.rv-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(200px, 340px); gap: clamp(32px, 5vw, 72px); margin-top: clamp(36px, 6vw, 64px); align-items: start; }
 .rv-story p { margin: 0 0 1.2em; max-width: 42rem; }
 .rv-story p:first-child::first-letter { text-transform: uppercase; }
 .rv-art-side { justify-content: center; align-items: flex-start; gap: 1.5rem; padding: .5rem 0 0; }
@@ -282,6 +282,8 @@ section.riverside.band{overflow:clip}
 .trail::before{content:"";position:absolute;left:21px;top:14px;bottom:14px;border-left:var(--line) dashed var(--ink);opacity:.45}
 .js .trail::before{display:none}
 .stop{position:relative;padding-bottom:clamp(30px,4vw,52px)}
+.stop.start{padding-bottom:clamp(14px,2vw,22px)}
+.trail-intro .gpi-lead{margin-bottom:0}
 .stop:last-child{padding-bottom:0}
 .stop::before{content:"";position:absolute;left:-51px;top:4px;width:18px;height:18px;box-sizing:border-box;border:var(--line) solid var(--ink);border-radius:50%;background:var(--paper);transition:background .4s,transform .4s}
 .stop.on::before{background:var(--terra);transform:scale(1.25)}
@@ -291,7 +293,7 @@ section.riverside.band{overflow:clip}
 .stop-head{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:32px;align-items:center;margin-bottom:22px}
 .stop-head .stop-text{margin-bottom:0}
 .line-art{display:block;width:100%;height:auto}
-.trail-intro{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:32px;align-items:start}
+.trail-intro{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:32px;align-items:start}
 .trail-hint{font-family:'Caveat',cursive;font-size:1.4rem;color:var(--terra);margin:0}
 .ph{margin:0}
 .ph figcaption{font-family:'Caveat',cursive;font-size:1.2rem;line-height:1.2;color:var(--mute);margin-top:6px}
@@ -357,8 +359,9 @@ section.riverside.band{overflow:clip}
 .stop-split .gpi-video{margin:0;max-width:none}
 .photo-pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}
 .photo-pair .fr{aspect-ratio:4/3}
-.path-close{font:italic 500 clamp(1.3rem,2.4vw,1.7rem)/1.35 var(--display);max-width:48rem;margin:30px 0 0}
 @media(max-width:700px){.photo-pair{grid-template-columns:1fr}}
+.rv-photos{display:flex;flex-direction:column;gap:14px}
+.rv-photos img{display:block;width:100%;aspect-ratio:3/2;object-fit:cover;border:var(--line) solid var(--ink);border-radius:4px}
 .creds{margin:-.3rem 0 1.5rem;font:600 1.5rem/1.2 var(--hand);color:var(--terra)}
 .creds a{color:inherit;text-underline-offset:4px;text-decoration-color:var(--terra)}
 </style>
@@ -436,6 +439,10 @@ section.riverside.band{overflow:clip}
 <p class="note">economic mobility</p>
 <h2>Riverside Collective</h2>
 </div>
+<div class="rv-art" aria-hidden="true">
+<svg class="art" viewBox="0 0 140 140"><use href="#cup"/></svg>
+<svg class="art" viewBox="0 0 100 150"><use href="#cone"/></svg>
+</div>
 </div>
 <p class="rv-lead">A worker-owned coffee shop and ice cream bar in South Jackson, Mississippi, run by the students and shaped by our neighbors.</p>
 <div class="rv-grid">
@@ -444,9 +451,9 @@ section.riverside.band{overflow:clip}
 <p>I spent my time building relationships with business leaders, foundations, local government, community groups, and parents to communicate our vision for cooperative economics. I secured a donated building and raised over $200,000 in philanthropic capital. I worked with contractors to fix our plumbing, redo our internal wiring, and install an HVAC system. I learned how to use a chainsaw and cut down overgrown bushes. When I couldn't be on-site, my teammates stepped up. Together, we coordinated transportation for kids, painted a mural, moved furniture, built cabinets, and designed a space that reflected pride in South Jackson. My students learned how to make lattes, develop marketing plans, and make decisions as a team. We opened in July of 2025.</p>
 <p>If you mix hard work with a group of people who care, transformation is inevitable. Riverside is our proof.</p>
 </div>
-<div class="rv-art rv-art-side" aria-hidden="true">
-<svg class="art" viewBox="0 0 140 140"><use href="#cup"/></svg>
-<svg class="art" viewBox="0 0 100 150"><use href="#cone"/></svg>
+<div class="rv-photos">
+<img src="photos/riverside-mural.jpg" alt="Vilas sitting in front of a colorful mural of an ice cream shop" loading="lazy">
+<img src="photos/riverside-hands.jpg" alt="Hands covered in green, blue and yellow paint in front of a mural" loading="lazy">
 </div>
 </div>
 <div class="pillars">
@@ -488,11 +495,6 @@ section.riverside.band{overflow:clip}
 <div class="rv-media">
 <figure class="vert"><video controls preload="metadata" playsinline src="photos/riverside-students.mp4" aria-label="Video from Riverside Collective"></video><figcaption>Riverside, in motion</figcaption></figure>
 <figure class="wide"><iframe src="https://www.youtube-nocookie.com/embed/wLlSubw1nig" title="Community Impact Grantee: Riverside Collective, from the Community Foundation for Mississippi" loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe><figcaption>Community Impact Grantee: Riverside Collective, a video from the Community Foundation for Mississippi</figcaption><img class="rv-ribbon" src="photos/riverside-entrance.jpg" alt="Students celebrating at the ribbon cutting outside the Riverside entrance" loading="lazy"></figure>
-</div>
-<div class="rv-snaps">
-<img src="photos/riverside-mural.jpg" alt="Vilas sitting in front of a colorful mural of an ice cream shop" loading="lazy">
-<img src="photos/riverside-hands.jpg" alt="Hands covered in green, blue and yellow paint in front of a mural" loading="lazy">
-<img src="photos/riverside-portrait.jpg" alt="A young woman resting on a green couch inside the coffeehouse" loading="lazy">
 </div>
 <div class="rv-links">
 <h3>Read about Riverside</h3>
@@ -541,6 +543,9 @@ section.riverside.band{overflow:clip}
 <article class="gpi-card pol-card">
 <h3>Speaking to journalists</h3>
 <p>I spoke to hundreds of journalists about carbon management at the Society of Environmental Journalists conference.</p>
+<ul class="gpi-list">
+<li><a href="https://carbonactionalliance.org/news-events/carbon-action-alliance-exhibits-at-society-of-environmental-journalists-conference/" target="_blank" rel="noopener">Carbon Action Alliance Exhibits at Society of Environmental Journalists' Conference</a></li>
+</ul>
 <figure class="ph pol-inner"><img class="fr" src="photos/cle-sej.jpg" alt="Vilas smiling with a blue umbrella in front of the LOVE sculpture" loading="lazy"></figure>
 </article>
 <article class="gpi-card pol-card">
@@ -613,6 +618,7 @@ section.riverside.band{overflow:clip}
 <p class="stop-label">destination · a just transition</p>
 <h3 class="stop-title">Mississippi's first Just Transition Plan</h3>
 <p class="stop-text">The result was the state's first Just Transition Plan. Our plan endorsed a wide range of clean energy technologies as long as they met conditions of safety, transparency, and investment. For carbon management technologies, this is a first-of-a-kind achievement.</p>
+<p class="stop-text">My work is a model for the developers who care about deploying projects the right way. Strong relationships, community investment, and a commitment to transparency are crucial to getting good projects built.</p>
 <div class="dest-grid">
 <div class="gpi-card gpi-plan">
 <h3>Mississippi Just Transition Plan</h3>
@@ -628,7 +634,6 @@ section.riverside.band{overflow:clip}
 </div>
 <figure class="ph fill"><img class="fr" src="photos/cle-group-mural.jpg" alt="Vilas and Mississippi People's Movement members in matching navy shirts in front of a mural" loading="lazy"><figcaption>with Mississippi People's Movement members</figcaption></figure>
 </div>
-<p class="path-close">My work is a model for the developers who care about deploying projects the right way. Strong relationships, community investment, and a commitment to transparency are crucial to getting good projects built.</p>
 </div>
 </div>
 </div>
