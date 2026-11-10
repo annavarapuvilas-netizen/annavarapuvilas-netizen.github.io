@@ -93,21 +93,6 @@ h1{font-size:clamp(38px,8.4vw,92px);line-height:.95;font-weight:600;letter-spaci
 .go{margin-top:auto;display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600}
 .go svg{width:14px;height:14px;flex:none}
 
-/* Close */
-.close{background:var(--carbon);color:var(--paper)}
-.close .wrap{padding-top:clamp(48px,8vw,88px);padding-bottom:clamp(48px,8vw,88px)}
-.close .eyebrow{color:var(--mute-inv);margin-bottom:16px}
-.close h2{font-size:clamp(28px,5vw,52px);line-height:1;font-weight:600;letter-spacing:-.02em;text-transform:uppercase;text-wrap:balance;max-width:16ch}
-.close .done{margin-top:20px;font-size:16px;font-weight:600}
-.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-.btn{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--paper);color:var(--paper);padding:13px 18px;font:600 14px/1 var(--font);text-decoration:none;background:transparent;cursor:pointer}
-.btn:hover{background:var(--paper);color:var(--ink)}
-.btn:focus-visible{outline:2px solid var(--sun);outline-offset:3px}
-.btn svg{width:14px;height:14px}
-.btn[disabled]{opacity:.4;cursor:default}
-.btn[disabled]:hover{background:transparent;color:var(--paper)}
-.fine{margin-top:48px;max-width:68ch;font-size:13px;line-height:1.5;color:var(--mute-inv)}
-
 @media (min-width:880px){
   .grid.c2{grid-template-columns:repeat(2,minmax(0,1fr))}
   .grid.c3{grid-template-columns:repeat(3,minmax(0,1fr))}
@@ -187,21 +172,6 @@ h1{font-size:clamp(38px,8.4vw,92px);line-height:.95;font-weight:600;letter-spaci
 
 <main id="main"></main>
 
-<section class="close">
-  <div class="wrap">
-    <p class="eyebrow">Contact</p>
-    <h2>Questions about any of this?</h2>
-    <p class="done" id="done" hidden>Fully charged at 2,400 °C. Thank you for opening so much of my work.</p>
-    <div class="actions">
-      <a class="btn" href="https://www.linkedin.com/in/vilas-annavarapu-08a2ab22a/" target="_blank" rel="noopener">Message me on LinkedIn
-        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" aria-hidden="true"><path d="M2 12 L12 2 M5 2 H12 V9"/></svg>
-      </a>
-      <a class="btn" href="mailto:vannavarapu@protonmail.com">vannavarapu@protonmail.com</a>
-      <button class="btn reset" type="button" disabled>Discharge the battery</button>
-    </div>
-    <p class="fine">The glow follows heated carbon, from dull red near 700 °C to white at 2,400 °C. The temperature shown here is an illustration and rises with the number of links opened.</p>
-  </div>
-</section>
 
 <script>
 (function () {
@@ -288,7 +258,6 @@ h1{font-size:clamp(38px,8.4vw,92px);line-height:.95;font-weight:600;letter-spaci
   var meter = document.getElementById('meter');
   var countEl = document.getElementById('count');
   var svg = document.getElementById('coreSvg');
-  var doneEl = document.getElementById('done');
   var resets = Array.prototype.slice.call(document.querySelectorAll('.reset'));
   var main = document.getElementById('main');
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -346,7 +315,6 @@ h1{font-size:clamp(38px,8.4vw,92px);line-height:.95;font-weight:600;letter-spaci
       tag.className = on ? 'tag on' : 'tag';
     });
     resets.forEach(function (b) { b.disabled = n === 0; });
-    doneEl.hidden = n < FULL;
   }
 
   var shown = AMBIENT, raf = 0;
