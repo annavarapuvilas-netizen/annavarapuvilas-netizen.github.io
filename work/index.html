@@ -41,25 +41,13 @@ a{color:inherit}
 /* Stage */
 .stage{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--carbon);color:var(--paper);overflow:hidden;border-bottom:1px solid rgba(255,255,255,.28)}
 .stage::before{content:"";position:absolute;inset:0;background:var(--core);opacity:calc(var(--glow)*.12);pointer-events:none}
-.stage .wrap{position:relative;display:grid;align-items:center;column-gap:24px;row-gap:6px;padding-top:12px;padding-bottom:12px;grid-template-columns:minmax(140px,.7fr) minmax(0,2.5fr) minmax(230px,1.1fr);grid-template-areas:"ident core read"}
-.ident{grid-area:ident;display:flex;flex-direction:column;align-items:flex-start;gap:10px;min-width:0}
-.ident .eyebrow{color:var(--mute-inv)}
-.ident .name{font-size:20px;line-height:22px;font-weight:600;text-transform:uppercase;letter-spacing:-.005em}
+.stage .wrap{position:relative;display:grid;align-items:center;column-gap:24px;row-gap:6px;padding-top:12px;padding-bottom:12px;grid-template-columns:minmax(0,1fr) minmax(0,700px) minmax(0,1fr);grid-template-areas:". core read"}
 .core{grid-area:core;width:100%;height:auto;overflow:visible;display:block}
-.read{grid-area:read;justify-self:end;width:100%;max-width:330px;display:grid;grid-template-columns:1fr 1fr;column-gap:16px;row-gap:6px;text-align:right;min-width:0}
-.metric{min-width:0}
-.read .eyebrow{color:var(--mute-inv)}
-.temp{font-size:clamp(26px,3vw,36px);line-height:1.05;font-weight:600;letter-spacing:-.02em;font-variant-numeric:tabular-nums;white-space:nowrap}
-.temp .unit{font-size:.5em;letter-spacing:0;margin-left:.15em;font-weight:400;color:var(--mute-inv)}
-.meter{grid-column:1/-1;display:flex;gap:3px;margin-top:4px;justify-content:flex-end}
+.read{grid-area:read;justify-self:end;width:100%;max-width:260px;display:flex;flex-direction:column;align-items:flex-end;gap:6px;min-width:0}
+.meter{display:flex;gap:3px;width:100%;justify-content:flex-end}
 .meter span{height:6px;flex:1 1 0;max-width:22px;min-width:6px;border:1px solid rgba(255,255,255,.55)}
 .meter span.on{background:var(--sun);border-color:var(--sun)}
-.count{grid-column:1/-1;font-size:12px;line-height:16px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute-inv)}
-
-.ghost{appearance:none;background:transparent;color:inherit;border:1px solid currentColor;padding:7px 12px;font:600 12px/1 var(--font);letter-spacing:.08em;text-transform:uppercase;cursor:pointer;border-radius:0}
-.ghost:hover:not([disabled]){background:var(--paper);color:var(--ink)}
-.ghost[disabled]{opacity:.4;cursor:default}
-.ghost:focus-visible{outline:2px solid var(--sun);outline-offset:3px}
+.count{font-size:12px;line-height:16px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute-inv);text-align:right}
 
 /* Diagram */
 .core text{font:600 9px/1 var(--font);letter-spacing:.1em;text-transform:uppercase;fill:rgba(255,255,255,.82);paint-order:stroke;stroke:var(--carbon);stroke-width:3px}
@@ -136,14 +124,11 @@ h1{font-size:clamp(38px,8.4vw,92px);line-height:.95;font-weight:600;letter-spaci
 
 @media (max-width:759px){
   .stage .wrap{grid-template-columns:minmax(0,1fr);grid-template-areas:"core" "read";row-gap:6px;padding-top:8px;padding-bottom:8px}
-  .ident{display:none}
   .core{max-height:62px}
   .core text{display:none}
-  .read{max-width:none;justify-self:stretch;grid-template-columns:auto auto 1fr;align-items:end;column-gap:20px;row-gap:0;text-align:left}
-  .read .eyebrow{font-size:10px;line-height:12px}
-  .temp{font-size:26px}
-  .meter{display:none}
-  .count{grid-column:auto;text-align:right;font-size:11px;line-height:14px;letter-spacing:.06em}
+  .read{max-width:none;flex-direction:row;align-items:center;justify-content:space-between;gap:12px}
+  .meter{flex:1 1 auto;width:auto;justify-content:flex-start}
+  .count{white-space:nowrap;font-size:11px;line-height:14px;letter-spacing:.06em}
 }
 @media (prefers-reduced-motion:reduce){
   .card,.card::after{transition:none}
@@ -156,12 +141,6 @@ h1{font-size:clamp(38px,8.4vw,92px);line-height:.95;font-weight:600;letter-spaci
 
 <div class="stage" id="stage">
   <div class="wrap">
-    <div class="ident">
-      <p class="eyebrow">Thermal battery</p>
-      <p class="name">Carbon core</p>
-      <button class="ghost reset" type="button" disabled>Discharge</button>
-    </div>
-
     <svg class="core" id="coreSvg" viewBox="0 0 700 120" role="img" aria-label="Renewable energy charging a carbon thermal battery at 25 degrees Celsius, with heat output at 25 degrees Celsius">
       <defs>
         <filter id="blurWide" filterUnits="userSpaceOnUse" x="-240" y="-160" width="1180" height="440"><feGaussianBlur stdDeviation="26"/></filter>
@@ -243,14 +222,6 @@ h1{font-size:clamp(38px,8.4vw,92px);line-height:.95;font-weight:600;letter-spaci
     </svg>
 
     <div class="read">
-      <div class="metric">
-        <p class="eyebrow">Core</p>
-        <p class="temp"><span id="temp">25</span><span class="unit">°C</span></p>
-      </div>
-      <div class="metric">
-        <p class="eyebrow">Heat out</p>
-        <p class="temp"><span id="heat">25</span><span class="unit">°C</span></p>
-      </div>
       <div class="meter" id="meter" aria-hidden="true"></div>
       <p class="count" id="count" role="status">0 links opened</p>
     </div>
@@ -269,7 +240,7 @@ h1{font-size:clamp(38px,8.4vw,92px);line-height:.95;font-weight:600;letter-spaci
 
 <footer class="foot">
   <div class="wrap">
-    <p>Core temperature follows the glow of heated carbon, from dull red near 700 °C to white at 2,400 °C. Heat output tops out at 375 °C, the temperature of Antora's HeatCore. All values rise with the number of links opened and are illustrations.</p>
+    <p>The glow follows heated carbon, from dull red near 700 °C to white at 2,400 °C, the ceiling of Antora's carbon thermal battery. Heat from HeatCore reaches up to 375 °C. The graphic is an illustration that responds to the number of links opened.</p>
   </div>
 </footer>
 
@@ -359,12 +330,9 @@ h1{font-size:clamp(38px,8.4vw,92px);line-height:.95;font-weight:600;letter-spaci
   });
 
   var stage = document.getElementById('stage');
-  var tempEl = document.getElementById('temp');
-  var heatEl = document.getElementById('heat');
   var meter = document.getElementById('meter');
   var countEl = document.getElementById('count');
   var svg = document.getElementById('coreSvg');
-  var resets = Array.prototype.slice.call(document.querySelectorAll('.reset'));
   var main = document.getElementById('main');
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -407,8 +375,6 @@ h1{font-size:clamp(38px,8.4vw,92px);line-height:.95;font-weight:600;letter-spaci
     stage.style.setProperty('--core', 'rgb(' + c[0] + ',' + c[1] + ',' + c[2] + ')');
     stage.style.setProperty('--glow', glow.toFixed(3));
     stage.style.setProperty('--heat', heat.toFixed(3));
-    tempEl.textContent = Math.round(t).toLocaleString('en-US');
-    heatEl.textContent = Math.round(out).toLocaleString('en-US');
     svg.setAttribute('aria-label', 'Renewable energy charging a carbon thermal battery at ' + Math.round(t) + ' degrees Celsius, with heat output at ' + Math.round(out) + ' degrees Celsius');
   }
 
@@ -423,7 +389,6 @@ h1{font-size:clamp(38px,8.4vw,92px);line-height:.95;font-weight:600;letter-spaci
       tag.className = on ? 'tag on' : 'tag';
       card.classList.toggle('lit', on);
     });
-    resets.forEach(function (b) { b.disabled = n === 0; });
     stage.classList.toggle('hot', n > 0);
   }
 
@@ -462,15 +427,6 @@ h1{font-size:clamp(38px,8.4vw,92px);line-height:.95;font-weight:600;letter-spaci
   }
   main.addEventListener('click', onOpen);
   main.addEventListener('auxclick', onOpen);
-
-  resets.forEach(function (b) {
-    b.addEventListener('click', function () {
-      opened.clear();
-      save();
-      paintState();
-      animateTo(AMBIENT);
-    });
-  });
 
   /* Turbine: turns slowly at rest, and its speed rises with the charge. Clicks add a short extra gust. */
   var lastFrame = null;
