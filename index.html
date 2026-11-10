@@ -342,26 +342,26 @@ section.riverside.band{overflow:clip}
 /* ---- clean energy: policy and communications ---- */
 .gpi-policy{background:var(--indigo);border-block:var(--line) solid var(--ink)}
 .gpi-policy .note{margin:0 0 4px}
-.pol-row1{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:18px;align-items:stretch;margin-top:8px}
-.pol-stack{display:flex;flex-direction:column;gap:18px}
-.pol-stack .pol-card:last-child{flex:1}
-.pol-row2{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:stretch;margin-top:18px}
-.pol-inner{flex:1;display:flex;margin:6px 0 0}
-.pol-inner .fr{flex:1;height:auto;min-height:240px;object-position:50% 40%}
+.pol-grid{display:grid;gap:18px;align-items:stretch;margin-top:8px}
+.pol-D{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr) minmax(0,1fr)}
+.pol-col{display:flex;flex-direction:column;gap:18px;min-width:0}
+.pol-grow{flex:1}
 .pol-card{display:flex;flex-direction:column}
-.pol-card .gpi-list{margin-top:auto;padding-top:6px}
-.pol-card p:first-of-type{margin-bottom:14px}
-.pol-row2 > .ph{display:flex;flex-direction:column}
-.pol-row2 > .ph .fr{flex:1;height:0;min-height:300px;object-position:50% 30%}
-.pol-row2 > .ph figcaption{margin-top:6px}
-@media(max-width:900px){.pol-row1{grid-template-columns:1fr}.pol-row2{grid-template-columns:1fr 1fr}.pol-row2 > .ph .fr{flex:none;height:auto;min-height:0;aspect-ratio:3/4}.pol-inner .fr{aspect-ratio:3/4;flex:none;height:auto}}
-@media(max-width:560px){.pol-row2{grid-template-columns:1fr}.pol-row2 > .ph .fr{aspect-ratio:4/3}.pol-inner .fr{aspect-ratio:4/3}}
+.pol-card p:first-of-type{margin-bottom:12px}
+.pol-card .gpi-list{padding-top:4px}
+.pol-quote{margin:2px 0 16px;padding:2px 0 2px 16px;border-left:3px solid var(--terra);font:italic 500 1.2rem/1.4 var(--display)}
+.pol-inner{flex:1;display:flex;margin:14px 0 0}
+.pol-inner .fr{flex:1;width:100%;height:0;min-height:200px;object-fit:cover;object-position:50% 40%}
+@media(max-width:900px){.pol-D{grid-template-columns:1fr}.pol-inner .fr{height:auto;aspect-ratio:4/3;flex:none}}
 .stop-split .gpi-video{margin:0;max-width:none}
 .photo-pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}
 .photo-pair .fr{aspect-ratio:4/3}
 @media(max-width:700px){.photo-pair{grid-template-columns:1fr}}
 .rv-photos{display:flex;flex-direction:column;gap:14px}
 .rv-photos img{display:block;width:100%;aspect-ratio:3/2;object-fit:cover;border:var(--line) solid var(--ink);border-radius:4px}
+.riverside.band{padding-bottom:clamp(32px,4.5vw,56px)}
+.gpi-policy.band{padding-block:clamp(32px,4.5vw,56px)}
+.gpi.band#path{padding-top:clamp(32px,4.5vw,56px)}
 .creds{margin:-.3rem 0 1.5rem;font:600 1.5rem/1.2 var(--hand);color:var(--terra)}
 .creds a{color:inherit;text-underline-offset:4px;text-decoration-color:var(--terra)}
 </style>
@@ -512,13 +512,13 @@ section.riverside.band{overflow:clip}
 <p class="note">clean energy</p>
 <h2>Great Plains Institute</h2>
 <p class="gpi-lead">I served as the inaugural environmental justice fellow at the Great Plains Institute. I worked on carbon management policy and communication, municipal energy resilience planning, and community engagement.</p>
-<div class="pol-row1">
-<div class="pol-stack">
+<div class="pol-grid pol-D">
+<div class="pol-col">
 <article class="gpi-card pol-card">
 <h3>State roadmaps in Texas and Colorado</h3>
 <p>I met with stakeholders in Texas and Colorado to write environmental justice language into their state carbon management roadmaps. I balanced the health and safety concerns of grassroots organizations with the incentives of developers and the economic priorities of state legislators.</p>
 </article>
-<article class="gpi-card pol-card">
+<article class="gpi-card pol-card pol-grow">
 <h3>The Civic Toolkit</h3>
 <p>I helped launch the Civic Toolkit, a guide for developers on working with communities.</p>
 <p>The civic toolkit is designed for communities, developers, decision makers interested in carbon management technologies. The toolkit has educational resources, strategies for effective communication, and best practices to engage with communities.</p>
@@ -527,9 +527,11 @@ section.riverside.band{overflow:clip}
 </ul>
 </article>
 </div>
-<article class="gpi-card pol-card">
+<div class="pol-col">
+<article class="gpi-card pol-card pol-grow">
 <h3>Writing on community collaboration</h3>
 <p>I wrote blog posts on the Carbon Action Alliance website that outline what high-quality community collaboration looks like.</p>
+<blockquote class="pol-quote">“We need a long-term strategy to build community capacity so that community members and leaders can understand the implications of a project, assess constituent concerns, and substantively participate in its development.”</blockquote>
 <ul class="gpi-list">
 <li><span>Dec 10, 2024 · written by me</span><a href="https://carbonactionalliance.org/news-events/what-i-learned-from-the-mississippi-peoples-movement-aligning-climate-action-with-community-needs/" target="_blank" rel="noopener">What I Learned from the Mississippi People's Movement: Aligning Climate Action with Community Needs</a></li>
 <li><span>Jul 24, 2024 · written by me</span><a href="https://carbonactionalliance.org/news-events/leveraging-community-benefit-frameworks-learnings-from-the-national-academies-conference/" target="_blank" rel="noopener">Leveraging Community Benefit Frameworks: Learnings from the National Academies Conference</a></li>
@@ -538,9 +540,8 @@ section.riverside.band{overflow:clip}
 </ul>
 </article>
 </div>
-<div class="pol-row2">
-<figure class="ph"><img class="fr" src="photos/cle-podium.jpg" alt="Vilas at a podium at the Kleinman Center for Energy Policy" loading="lazy"><figcaption>at the Kleinman Center for Energy Policy</figcaption></figure>
-<article class="gpi-card pol-card">
+<div class="pol-col">
+<article class="gpi-card pol-card pol-grow">
 <h3>Speaking to journalists</h3>
 <p>I spoke to hundreds of journalists about carbon management at the Society of Environmental Journalists conference.</p>
 <ul class="gpi-list">
@@ -555,6 +556,7 @@ section.riverside.band{overflow:clip}
 <li><a href="https://carbonactionalliance.org/news-events/pipeline-company-environmental-group-explore-unique-partnership-at-co2nnect-2024-conference/" target="_blank" rel="noopener">Pipeline Company, Environmental Group Explore Unique Partnership at CO2NNECT 2024 Conference</a></li>
 </ul>
 </article>
+</div>
 </div>
 </div>
 </section>
