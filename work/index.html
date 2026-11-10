@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>Vilas Annavarapu Work Samples</title>
+<meta name="description" content="Slide decks, memos, writing and video from Vilas Annavarapu, with a carbon thermal battery that heats toward white as links are opened.">
+<meta property="og:title" content="Vilas Annavarapu Work Samples">
+<meta property="og:description" content="Open the work. Charge the core.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231F2E33'/%3E%3Crect x='6' y='9' width='20' height='14' fill='%23ef6a14'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;600&display=swap">
+<style>
+/* Layout: a sticky dark stage holds the carbon core and its readout. Below it, a white page of sample cards in five groups, then a carbon-green close. The glow is the one bold element; everything else stays black, white and one yellow. */
+:root{
+  --ink:#000;
+  --paper:#fff;
+  --carbon:#1F2E33;
+  --sun:#F2DC6D;
+  --mute:rgba(0,0,0,.62);
+  --mute-inv:rgba(255,255,255,.68);
+  --core:#1a1d1e;
+  --glow:0;
+  --font:"Pilat","Inter Tight","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.35;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--carbon)}
+h1,h2,h3,p{margin:0}
+a{color:inherit}
+
+.wrap{width:100%;max-width:1264px;margin-left:auto;margin-right:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.eyebrow{font-size:12px;line-height:16px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+
+/* Stage */
+.stage{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--carbon);color:var(--paper);overflow:hidden;border-bottom:1px solid rgba(255,255,255,.28)}
+.stage::before{content:"";position:absolute;inset:0;background:var(--core);opacity:calc(var(--glow)*.12);pointer-events:none}
+.stage .wrap{position:relative;display:grid;align-items:center;column-gap:24px;row-gap:6px;padding-top:12px;padding-bottom:12px;grid-template-columns:minmax(0,1fr) minmax(0,640px) minmax(0,1fr);grid-template-areas:"ident core read"}
+.ident{grid-area:ident;display:flex;flex-direction:column;align-items:flex-start;gap:10px;min-width:0}
+.ident .eyebrow{color:var(--mute-inv)}
+.ident .name{font-size:20px;line-height:22px;font-weight:600;text-transform:uppercase;letter-spacing:-.005em}
+.core{grid-area:core;width:100%;height:auto;overflow:visible;display:block}
+.read{grid-area:read;justify-self:end;text-align:right;min-width:0}
+.read .eyebrow{color:var(--mute-inv)}
+.temp{font-size:clamp(30px,4vw,44px);line-height:1.05;font-weight:600;letter-spacing:-.02em;font-variant-numeric:tabular-nums;white-space:nowrap}
+.temp .unit{font-size:.5em;letter-spacing:0;margin-left:.15em;font-weight:400;color:var(--mute-inv)}
+.meter{display:flex;gap:3px;margin-top:8px;justify-content:flex-end}
+.meter span{height:6px;flex:1 1 0;max-width:22px;min-width:6px;border:1px solid rgba(255,255,255,.55)}
+.meter span.on{background:var(--sun);border-color:var(--sun)}
+.count{margin-top:8px;font-size:12px;line-height:16px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute-inv)}
+
+.ghost{appearance:none;background:transparent;color:inherit;border:1px solid currentColor;padding:7px 12px;font:600 12px/1 var(--font);letter-spacing:.08em;text-transform:uppercase;cursor:pointer;border-radius:0}
+.ghost:hover:not([disabled]){background:var(--paper);color:var(--ink)}
+.ghost[disabled]{opacity:.4;cursor:default}
+.ghost:focus-visible{outline:2px solid var(--sun);outline-offset:3px}
+
+/* SVG parts */
+.core text{font:600 9px/1 var(--font);letter-spacing:.1em;text-transform:uppercase;fill:rgba(255,255,255,.8);paint-order:stroke;stroke:var(--carbon);stroke-width:3px}
+.core .fx{fill:var(--core)}
+.core .halo-wide{opacity:calc(var(--glow)*.5)}
+.core .halo-near{opacity:calc(var(--glow)*.9)}
+.core .rays line{opacity:calc(.14 + var(--glow)*.86)}
+
+/* Hero */
+.hero .wrap{padding-top:clamp(40px,8vw,96px);padding-bottom:clamp(32px,5vw,56px)}
+.hero .eyebrow{color:var(--mute);margin-bottom:20px}
+h1{font-size:clamp(38px,8.4vw,92px);line-height:.95;font-weight:600;letter-spacing:-.025em;text-transform:uppercase;text-wrap:balance}
+.lede{margin-top:28px;max-width:60ch;font-size:clamp(16px,2vw,19px);line-height:1.45}
+
+/* Sections */
+.group .wrap{padding-top:20px;padding-bottom:36px}
+.sec-head{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+.sec-head h2{font-size:14px;line-height:18px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;white-space:nowrap}
+.sec-head .rule{flex:1 1 auto;height:1px;background:var(--ink)}
+.sec-head .n{font-size:14px;font-variant-numeric:tabular-nums;color:var(--mute)}
+.grid{display:grid;gap:16px;grid-template-columns:minmax(0,1fr)}
+
+.card{display:flex;flex-direction:column;gap:12px;min-height:236px;min-width:0;padding:20px;border:1px solid var(--ink);background:var(--paper);color:var(--ink);text-decoration:none;transition:background .15s,color .15s}
+.card:hover,.card:focus-visible{background:var(--ink);color:var(--paper)}
+.card:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.card.compact{min-height:148px}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.kind{font-size:12px;line-height:16px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;opacity:.62;padding-top:3px}
+.tag{flex:none;font-size:11px;line-height:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border:1px solid currentColor;white-space:nowrap}
+.tag.on{background:var(--sun);border-color:var(--sun);color:var(--ink)}
+.card h3{font-size:20px;line-height:22px;font-weight:600;letter-spacing:-.005em;text-transform:uppercase;text-wrap:balance}
+.card p{font-size:15px;line-height:1.45}
+.go{margin-top:auto;display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600}
+.go svg{width:14px;height:14px;flex:none}
+
+/* Close */
+.close{background:var(--carbon);color:var(--paper)}
+.close .wrap{padding-top:clamp(48px,8vw,88px);padding-bottom:clamp(48px,8vw,88px)}
+.close .eyebrow{color:var(--mute-inv);margin-bottom:16px}
+.close h2{font-size:clamp(28px,5vw,52px);line-height:1;font-weight:600;letter-spacing:-.02em;text-transform:uppercase;text-wrap:balance;max-width:16ch}
+.close .done{margin-top:20px;font-size:16px;font-weight:600}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--paper);color:var(--paper);padding:13px 18px;font:600 14px/1 var(--font);text-decoration:none;background:transparent;cursor:pointer}
+.btn:hover{background:var(--paper);color:var(--ink)}
+.btn:focus-visible{outline:2px solid var(--sun);outline-offset:3px}
+.btn svg{width:14px;height:14px}
+.btn[disabled]{opacity:.4;cursor:default}
+.btn[disabled]:hover{background:transparent;color:var(--paper)}
+.fine{margin-top:48px;max-width:68ch;font-size:13px;line-height:1.5;color:var(--mute-inv)}
+
+@media (min-width:880px){
+  .grid.c2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .grid.c3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .card.span2{grid-column:span 2}
+}
+
+@media (max-width:759px){
+  .stage .wrap{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"core core" "read ident";row-gap:8px;padding-top:10px;padding-bottom:10px}
+  .core{max-height:58px}
+  .core text{display:none}
+  .read{justify-self:start;text-align:left}
+  .read .eyebrow{display:none}
+  .meter{justify-content:flex-start}
+  .temp{font-size:30px}
+  .ident{align-self:end;align-items:flex-end}
+  .ident .eyebrow,.ident .name,.ident .ghost{display:none}
+  .count{margin-top:6px}
+}
+@media (prefers-reduced-motion:reduce){.card{transition:none}}
+</style>
+</head>
+<body>
+
+<div class="stage" id="stage">
+  <div class="wrap">
+    <div class="ident">
+      <p class="eyebrow">Thermal battery</p>
+      <p class="name">Carbon core</p>
+      <button class="ghost reset" type="button" disabled>Discharge</button>
+    </div>
+
+    <svg class="core" id="coreSvg" viewBox="0 0 640 120" role="img" aria-label="Carbon thermal battery core at 25 degrees Celsius">
+      <defs>
+        <filter id="blurWide" filterUnits="userSpaceOnUse" x="-240" y="-160" width="1120" height="440"><feGaussianBlur stdDeviation="26"/></filter>
+        <filter id="blurNear" filterUnits="userSpaceOnUse" x="-240" y="-160" width="1120" height="440"><feGaussianBlur stdDeviation="9"/></filter>
+      </defs>
+      <rect class="fx halo-wide" x="118" y="12" width="404" height="96" filter="url(#blurWide)"/>
+      <rect class="fx halo-near" x="128" y="30" width="384" height="60" filter="url(#blurNear)"/>
+
+      <rect x="120" y="24" width="400" height="72" fill="none" stroke="#fff" stroke-width="1.5" opacity=".75"/>
+      <rect class="fx" x="128" y="32" width="58" height="56"/>
+      <rect class="fx" x="193" y="32" width="58" height="56"/>
+      <rect class="fx" x="258" y="32" width="58" height="56"/>
+      <rect class="fx" x="323" y="32" width="58" height="56"/>
+      <rect class="fx" x="388" y="32" width="58" height="56"/>
+      <rect class="fx" x="453" y="32" width="58" height="56"/>
+
+      <g stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="square" stroke-linejoin="miter">
+        <line x1="16" y1="60" x2="114" y2="60"/>
+        <path d="M105 54 L115 60 L105 66"/>
+      </g>
+      <g class="rays" stroke="#fff" stroke-width="1.5" stroke-dasharray="6 5" stroke-linecap="butt">
+        <line x1="532" y1="44" x2="624" y2="44"/>
+        <line x1="532" y1="60" x2="624" y2="60"/>
+        <line x1="532" y1="76" x2="624" y2="76"/>
+      </g>
+      <text x="16" y="46">Electricity in</text>
+      <text x="624" y="30" text-anchor="end">Radiated light</text>
+    </svg>
+
+    <div class="read">
+      <p class="eyebrow">Core temperature</p>
+      <p class="temp"><span id="temp">25</span><span class="unit">°C</span></p>
+      <div class="meter" id="meter" aria-hidden="true"></div>
+      <p class="count" id="count" role="status">0 links opened</p>
+    </div>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Vilas Annavarapu, content work</p>
+    <h1>Open the work.<br>Charge the core.</h1>
+    <p class="lede">Slide decks, memos, writing and video from my past work. Every link you open sends more power into the carbon block above. Open twelve and it reaches 2,400 °C, the same ceiling as Antora's carbon thermal battery.</p>
+  </div>
+</header>
+
+<main id="main"></main>
+
+<section class="close">
+  <div class="wrap">
+    <p class="eyebrow">Contact</p>
+    <h2>Questions about any of this?</h2>
+    <p class="done" id="done" hidden>Fully charged at 2,400 °C. Thank you for opening so much of my work.</p>
+    <div class="actions">
+      <a class="btn" href="https://www.linkedin.com/in/vilas-annavarapu-08a2ab22a/" target="_blank" rel="noopener">Message me on LinkedIn
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" aria-hidden="true"><path d="M2 12 L12 2 M5 2 H12 V9"/></svg>
+      </a>
+      <a class="btn" href="mailto:vannavarapu@protonmail.com">vannavarapu@protonmail.com</a>
+      <button class="btn reset" type="button" disabled>Discharge the battery</button>
+    </div>
+    <p class="fine">The glow follows heated carbon, from dull red near 700 °C to white at 2,400 °C. The temperature shown here is an illustration and rises with the number of links opened.</p>
+  </div>
+</section>
+
+<script>
+(function () {
+  var MAX_T = 2400, AMBIENT = 25, FULL = 12;
+
+  /* Edit this list to change the site. Sections appear in this order. */
+  var SECTIONS = [
+    { id: 'antora', label: 'Antora-specific materials', cols: 2 },
+    { id: 'deck',   label: 'Slide decks',               cols: 2 },
+    { id: 'video',  label: 'Videos',                    cols: 2 },
+    { id: 'writing',label: 'Writing',                   cols: 3 },
+    { id: 'social', label: 'Social media',              cols: 3 }
+  ];
+
+  var WORK = [
+    { s: 'antora', kind: 'One-pager', title: 'How Antora Heat and Power work', desc: 'My one-page explainer of HeatCore and the Power Block, from rapid charging to firm power.', url: 'files/heat-and-power-one-page.pdf', cta: 'Open PDF' },
+    { s: 'antora', kind: 'Memo', title: 'Strategies to maintain public support for energy projects', desc: 'Lessons from the ADM carbon storage leak in Decatur, Illinois, with three recommendations for Antora.', url: 'files/policy-memo-public-support-for-energy-projects.pdf', cta: 'Read memo' },
+
+    { s: 'deck', kind: 'Deck', title: 'Net-zero strategies for Mexico City', desc: 'Gaps in the city’s Climate Action Plan, with proposals on mobility, geothermal energy and heat pumps.', url: 'files/net-zero-strategies-mexico-city.pdf', cta: 'Open deck' },
+    { s: 'deck', kind: 'Deck', title: 'Gender in green finance for rural revitalization', desc: 'Capstone for UNDP China, written with two teammates at Schwarzman College and defended in June 2026.', url: 'files/gender-in-green-finance-undp-china-capstone.pdf', cta: 'Open deck' },
+    { s: 'deck', kind: 'Deck', title: 'Equity and justice in critical mineral supply chains', desc: 'Co-authored deck on keeping the Global South from bearing the brunt of the energy transition, and the Great Plains Institute’s role.', url: 'files/equity-and-justice-in-critical-mineral-supply-chains.pdf', cta: 'Open deck' },
+    { s: 'deck', kind: 'Deck', title: 'Environmental justice fellowship lunch and learn', desc: 'How the Great Plains Institute fellowship works, plus Riverside Collective and my carbon management projects.', url: 'files/environmental-justice-fellowship-lunch-and-learn.pdf', cta: 'Open deck' },
+
+    { s: 'video', kind: 'Video', title: 'Climate Learning Convening recap', desc: 'Recap of the convening in Jackson with the Mississippi People’s Movement.', url: 'https://www.youtube.com/watch?v=8kkeWGY5qzw', cta: 'Watch video' },
+    { s: 'video', kind: 'Video', title: 'Riverside Collective, Community Impact Grantee', desc: 'The Community Foundation for Mississippi’s profile of Riverside.', url: 'https://www.youtube.com/watch?v=wLlSubw1nig', cta: 'Watch video' },
+    { s: 'video', kind: 'LinkedIn clip', title: 'Interviews at Connect, clip 1', desc: 'A clip from Carbon Action Alliance’s Connect, where I interview attendees.', url: 'https://lnkd.in/p/duqfvTEm', cta: 'Watch on LinkedIn' },
+    { s: 'video', kind: 'LinkedIn clip', title: 'Interviews at Connect, clip 2', desc: 'A second clip from Carbon Action Alliance’s Connect, where I interview attendees.', url: 'https://lnkd.in/p/dwBWmFSs', cta: 'Watch on LinkedIn' },
+
+    { s: 'writing', span2: true, kind: 'Newsletter, latest', title: 'Riverside Collective June and July 2025 newsletter', desc: 'The coffeehouse opening on July 12, the community turnout and the handoff to Riverside’s new leader.', url: 'https://riversidecollective.org/mailpoet-email/b8256448ffca-riverside-collective-june-and-july-2025-newsletter/', cta: 'Read newsletter' },
+    { s: 'writing', kind: 'Archive', title: 'All Riverside newsletters', desc: 'Monthly updates from November 2023 to August 2025.', url: 'https://riversidecollective.org/aboutus/a-community-cooperative/', cta: 'Browse archive' },
+    { s: 'writing', kind: 'Blog, Dec 2024', title: 'What I learned from the Mississippi People’s Movement', desc: 'On climate education, long-term visioning and trust, with a statewide network of churches, nonprofits and local leaders.', url: 'https://carbonactionalliance.org/news-events/what-i-learned-from-the-mississippi-peoples-movement-aligning-climate-action-with-community-needs/', cta: 'Read post' },
+    { s: 'writing', kind: 'Blog, Jul 2024', title: 'Leveraging community benefit frameworks', desc: 'Takeaways from the National Academies conference.', url: 'https://carbonactionalliance.org/news-events/leveraging-community-benefit-frameworks-learnings-from-the-national-academies-conference/', cta: 'Read post' },
+    { s: 'writing', kind: 'Plan, Feb 2025', title: 'Mississippi Just Transition Plan', desc: 'A 24-page plan with community interviews and a path to a just transition, compiled with the Mississippi People’s Movement and the Great Plains Institute. I convened the community organizations behind it.', url: 'files/mississippi-just-transition-plan.pdf', cta: 'Open PDF' },
+
+    { s: 'social', compact: true, kind: 'Instagram', title: 'Reel 1', url: 'https://www.instagram.com/reel/DB9GrCRuUMY/', cta: 'Watch reel' },
+    { s: 'social', compact: true, kind: 'Instagram', title: 'Reel 2', url: 'https://www.instagram.com/reel/DGje9glOspe/', cta: 'Watch reel' },
+    { s: 'social', compact: true, kind: 'Instagram', title: 'Reel 3', url: 'https://www.instagram.com/reel/DDlA1qgOT5F/', cta: 'Watch reel' },
+    { s: 'social', compact: true, kind: 'Instagram', title: 'Reel 4', url: 'https://www.instagram.com/reel/DCsLCJcuVSN/', cta: 'Watch reel' },
+    { s: 'social', compact: true, kind: 'Instagram', title: 'Reel 5', url: 'https://www.instagram.com/reel/DCdZr4LuRoj/', cta: 'Watch reel' },
+    { s: 'social', compact: true, kind: 'Instagram', title: 'Reel 6', url: 'https://www.instagram.com/reel/DCXRE-DxBj_/', cta: 'Watch reel' }
+  ];
+
+  var STORE_KEY = 'vilas-work-opened-v2';
+  var ARROW = '<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" aria-hidden="true"><path d="M2 12 L12 2 M5 2 H12 V9"/></svg>';
+
+  /* Glow colors of heated carbon, by temperature in C */
+  var STOPS = [
+    [25,   [26, 29, 30]],
+    [500,  [42, 26, 23]],
+    [700,  [122, 30, 14]],
+    [900,  [200, 54, 15]],
+    [1100, [239, 106, 20]],
+    [1300, [255, 157, 46]],
+    [1500, [255, 197, 90]],
+    [1800, [255, 230, 168]],
+    [2100, [255, 246, 224]],
+    [2400, [255, 255, 255]]
+  ];
+
+  function colorAt(t) {
+    if (t <= STOPS[0][0]) return STOPS[0][1];
+    for (var i = 1; i < STOPS.length; i++) {
+      if (t <= STOPS[i][0]) {
+        var a = STOPS[i - 1], b = STOPS[i];
+        var k = (t - a[0]) / (b[0] - a[0]);
+        return [0, 1, 2].map(function (j) { return Math.round(a[1][j] + (b[1][j] - a[1][j]) * k); });
+      }
+    }
+    return STOPS[STOPS.length - 1][1];
+  }
+  function tempFor(n) {
+    var h = Math.min(1, n / FULL);
+    return AMBIENT + (MAX_T - AMBIENT) * Math.pow(h, 0.6);
+  }
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; });
+  }
+
+  var total = WORK.length;
+  WORK.forEach(function (w, i) { w.id = 'w' + i; });
+
+  var stage = document.getElementById('stage');
+  var tempEl = document.getElementById('temp');
+  var meter = document.getElementById('meter');
+  var countEl = document.getElementById('count');
+  var svg = document.getElementById('coreSvg');
+  var doneEl = document.getElementById('done');
+  var resets = Array.prototype.slice.call(document.querySelectorAll('.reset'));
+  var main = document.getElementById('main');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Opened links, remembered in this browser */
+  var opened = new Set();
+  try {
+    var saved = JSON.parse(localStorage.getItem(STORE_KEY) || '[]');
+    saved.forEach(function (id) { if (WORK.some(function (w) { return w.id === id; })) opened.add(id); });
+  } catch (e) {}
+  function save() {
+    try { localStorage.setItem(STORE_KEY, JSON.stringify(Array.from(opened))); } catch (e) {}
+  }
+
+  /* Build the cards */
+  var html = '';
+  SECTIONS.forEach(function (sec) {
+    var items = WORK.filter(function (w) { return w.s === sec.id; });
+    if (!items.length) return;
+    html += '<section class="group"><div class="wrap"><div class="sec-head"><h2>' + esc(sec.label) + '</h2><span class="rule"></span><span class="n">' + items.length + '</span></div><div class="grid c' + sec.cols + '">';
+    items.forEach(function (w) {
+      var external = /^https?:/.test(w.url);
+      html += '<a class="card' + (w.span2 ? ' span2' : '') + (w.compact ? ' compact' : '') + '" data-id="' + w.id + '" href="' + esc(w.url) + '" target="_blank" rel="noopener"' + (external ? '' : '') + '>' +
+        '<div class="card-top"><span class="kind">' + esc(w.kind) + '</span><span class="tag">+1 charge</span></div>' +
+        '<h3>' + esc(w.title) + '</h3>' + (w.desc ? '<p>' + esc(w.desc) + '</p>' : '') +
+        '<span class="go">' + esc(w.cta) + ' ' + ARROW + '</span></a>';
+    });
+    html += '</div></div></section>';
+  });
+  main.innerHTML = html;
+
+  /* Meter: one segment per link needed for full charge */
+  var segs = '';
+  for (var i = 0; i < FULL; i++) segs += '<span></span>';
+  meter.innerHTML = segs;
+
+  function paintHeat(t) {
+    var c = colorAt(t);
+    var glow = Math.max(0, Math.min(1, (t - 500) / 1900));
+    stage.style.setProperty('--core', 'rgb(' + c[0] + ',' + c[1] + ',' + c[2] + ')');
+    stage.style.setProperty('--glow', glow.toFixed(3));
+    var r = Math.round(t);
+    tempEl.textContent = r.toLocaleString('en-US');
+    svg.setAttribute('aria-label', 'Carbon thermal battery core at ' + r + ' degrees Celsius');
+  }
+
+  function paintState() {
+    var n = opened.size;
+    countEl.textContent = n === 1 ? '1 link opened' : n + ' links opened';
+    Array.prototype.forEach.call(meter.children, function (s, i) { s.className = i < n ? 'on' : ''; });
+    Array.prototype.forEach.call(document.querySelectorAll('.card'), function (card) {
+      var on = opened.has(card.getAttribute('data-id'));
+      var tag = card.querySelector('.tag');
+      tag.textContent = on ? 'Charged' : '+1 charge';
+      tag.className = on ? 'tag on' : 'tag';
+    });
+    resets.forEach(function (b) { b.disabled = n === 0; });
+    doneEl.hidden = n < FULL;
+  }
+
+  var shown = AMBIENT, raf = 0;
+  function animateTo(target) {
+    cancelAnimationFrame(raf);
+    if (reduce) { shown = target; paintHeat(shown); return; }
+    var from = shown, t0 = null, dur = 1400;
+    function step(now) {
+      if (t0 === null) t0 = now;
+      var k = Math.min(1, (now - t0) / dur);
+      var e = 1 - Math.pow(1 - k, 3);
+      shown = from + (target - from) * e;
+      paintHeat(shown);
+      if (k < 1) raf = requestAnimationFrame(step);
+    }
+    raf = requestAnimationFrame(step);
+  }
+
+  function onOpen(e) {
+    var card = e.target.closest ? e.target.closest('.card') : null;
+    if (!card) return;
+    var id = card.getAttribute('data-id');
+    if (!opened.has(id)) {
+      opened.add(id);
+      save();
+      paintState();
+      animateTo(tempFor(opened.size));
+    }
+  }
+  main.addEventListener('click', onOpen);
+  main.addEventListener('auxclick', onOpen);
+
+  resets.forEach(function (b) {
+    b.addEventListener('click', function () {
+      opened.clear();
+      save();
+      paintState();
+      animateTo(AMBIENT);
+    });
+  });
+
+  /* Restore at rest */
+  shown = tempFor(opened.size);
+  paintHeat(shown);
+  paintState();
+})();
+</script>
+</body>
+</html>
