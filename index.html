@@ -71,7 +71,7 @@ svg.art { color: var(--ink); overflow: visible; }
 .d-sprig { width: 11%; right: 0; bottom: 6%; transform: rotate(14deg); }
 .d-pais { width: 14%; left: 30%; bottom: -2%; transform: rotate(-20deg); }
 .d-lotus { width: 22%; right: 2%; top: -2%; }
-.hand { position: absolute; right: 4%; bottom: -2.4rem; font: 600 1.3rem/1.05 var(--hand); color: var(--terra); transform: rotate(-3deg); white-space: nowrap; }
+.hand { position: absolute; right: 4%; top: calc(88.5% + 30px); font: 600 1.3rem/1.05 var(--hand); color: var(--terra); transform: rotate(-3deg); white-space: nowrap; }
 .stats { background: var(--marigold); border-block: var(--line) solid var(--ink); }
 .stats-in { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px; padding-block: clamp(36px, 5vw, 60px); }
 .num { position: relative; display: inline-block; padding: .1em .35em; }
@@ -377,7 +377,7 @@ section.riverside.band{overflow:clip}
 .hero-path li.hp-mini::before{display:none}
 .hero-path .hp-mini span{position:relative;display:block;max-width:none;padding-top:30px;text-align:center;font:600 1.05rem/1.1 var(--hand);color:var(--mute)}
 .hero-path .hp-mini span::before{content:"";position:absolute;left:50%;top:6px;width:10px;height:10px;margin-left:-5px;border-radius:50%;background:var(--rose);border:var(--line) solid var(--ink)}
-@media(max-width:900px){.hero-story{padding-top:44px}}
+@media(max-width:900px){.hero-story{padding-top:16px}}
 @media(max-width:1000px){.hero-path{grid-template-columns:1fr;gap:26px}.hero-path::before{left:10px;right:auto;top:10px;bottom:10px;border-top:0;border-left:2px dashed var(--terra)}.hero-path li{padding:0 0 0 46px}.hp-ic{height:60px}.hero-path li.hp-mini{display:flex;flex-direction:column;gap:12px;padding:0}.hero-path .hp-mini span{text-align:left;padding:0 0 0 46px}.hero-path .hp-mini span::before{left:6px;top:3px;margin-left:0}}
 .sw{background:var(--rosewash);border-top:var(--line) solid var(--ink)}
 .sw-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(28px,5vw,64px);align-items:start;margin-top:clamp(20px,3vw,32px)}
