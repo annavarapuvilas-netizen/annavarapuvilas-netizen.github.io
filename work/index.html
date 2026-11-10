@@ -68,16 +68,27 @@ a{color:inherit}
 .core .halo-wide{opacity:calc(var(--glow)*.5)}
 .core .halo-near{opacity:calc(var(--glow)*.9)}
 .core .rays line{opacity:calc(.14 + var(--glow)*.86)}
-.core .outflow{opacity:calc(.3 + var(--heat)*.7)}
-.core .wave{fill:none;stroke:#fff;stroke-width:1.5;stroke-linecap:round}
-.core .w1{opacity:clamp(0, calc(var(--heat)*4), 1)}
-.core .w2{opacity:clamp(0, calc((var(--heat) - .15)*3), 1)}
-.core .w3{opacity:clamp(0, calc((var(--heat) - .35)*3), 1)}
-.core .blades{transform-origin:30px 86px}
+.core .outflow{opacity:.85}
+/* Sun: warms from outline only to a bright yellow disc with a halo and longer rays as the charge builds */
+.core .sun-halo{fill:var(--sun);opacity:calc(var(--heat)*.85)}
+.core .sun-disc{fill:var(--sun);stroke:none;fill-opacity:var(--heat)}
+.core .sun-lit{transform-origin:30px 28px;transform:scale(calc(1 + var(--heat)*.35))}
+.core .sun-lit line{stroke:var(--sun);opacity:var(--heat)}
+/* Heat output: the same gentle rising shimmer at every charge level, shown once there is any heat */
+.core .waves{opacity:0;transition:opacity .8s ease}
+.hot .core .waves{opacity:1}
+.core .wave{fill:none;stroke:#fff;stroke-width:1.5;stroke-linecap:round;animation:shimmer 2.6s ease-in-out infinite}
+.core .w2{animation-delay:-.9s}
+.core .w3{animation-delay:-1.7s}
 .charging .core .flow{stroke-dasharray:6 5;animation:flow .55s linear infinite}
-.charging .core .blades{animation:spin 1.4s linear infinite}
 @keyframes flow{to{stroke-dashoffset:-11}}
-@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes shimmer{
+  0%{transform:translate(0,7px);opacity:0}
+  20%{opacity:.95}
+  50%{transform:translate(2.5px,-1px)}
+  80%{opacity:.8}
+  100%{transform:translate(-1px,-9px);opacity:0}
+}
 
 /* Hero */
 .hero .wrap{padding-top:clamp(36px,7vw,80px);padding-bottom:clamp(24px,4vw,40px)}
@@ -136,7 +147,8 @@ h1{font-size:clamp(38px,8.4vw,92px);line-height:.95;font-weight:600;letter-spaci
 }
 @media (prefers-reduced-motion:reduce){
   .card,.card::after{transition:none}
-  .charging .core .flow,.charging .core .blades{animation:none}
+  .charging .core .flow{animation:none}
+  .core .wave{animation:none;opacity:.7}
 }
 </style>
 </head>
@@ -154,10 +166,14 @@ h1{font-size:clamp(38px,8.4vw,92px);line-height:.95;font-weight:600;letter-spaci
       <defs>
         <filter id="blurWide" filterUnits="userSpaceOnUse" x="-240" y="-160" width="1180" height="440"><feGaussianBlur stdDeviation="26"/></filter>
         <filter id="blurNear" filterUnits="userSpaceOnUse" x="-240" y="-160" width="1180" height="440"><feGaussianBlur stdDeviation="9"/></filter>
+        <filter id="blurSun" filterUnits="userSpaceOnUse" x="-30" y="-30" width="120" height="120"><feGaussianBlur stdDeviation="5"/></filter>
       </defs>
 
       <rect class="fx halo-wide" x="212" y="12" width="225" height="96" filter="url(#blurWide)"/>
       <rect class="fx halo-near" x="222" y="30" width="205" height="60" filter="url(#blurNear)"/>
+
+      <circle class="sun-halo" cx="30" cy="28" r="15" filter="url(#blurSun)"/>
+      <circle class="sun-disc" cx="30" cy="28" r="7"/>
 
       <g stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="square" stroke-linejoin="miter">
         <!-- sun -->
@@ -166,9 +182,15 @@ h1{font-size:clamp(38px,8.4vw,92px);line-height:.95;font-weight:600;letter-spaci
         <line x1="41" y1="28" x2="45" y2="28"/><line x1="19" y1="28" x2="15" y2="28"/>
         <line x1="37.8" y1="20.2" x2="40.6" y2="17.4"/><line x1="22.2" y1="20.2" x2="19.4" y2="17.4"/>
         <line x1="37.8" y1="35.8" x2="40.6" y2="38.6"/><line x1="22.2" y1="35.8" x2="19.4" y2="38.6"/>
+        <g class="sun-lit">
+          <line x1="30" y1="17" x2="30" y2="13"/><line x1="30" y1="39" x2="30" y2="43"/>
+          <line x1="41" y1="28" x2="45" y2="28"/><line x1="19" y1="28" x2="15" y2="28"/>
+          <line x1="37.8" y1="20.2" x2="40.6" y2="17.4"/><line x1="22.2" y1="20.2" x2="19.4" y2="17.4"/>
+          <line x1="37.8" y1="35.8" x2="40.6" y2="38.6"/><line x1="22.2" y1="35.8" x2="19.4" y2="38.6"/>
+        </g>
         <!-- wind turbine -->
         <line x1="30" y1="88" x2="30" y2="114"/>
-        <g class="blades">
+        <g class="blades" id="blades" transform="rotate(0 30 86)">
           <line x1="30" y1="86" x2="30" y2="66"/>
           <line x1="30" y1="86" x2="47.3" y2="96"/>
           <line x1="30" y1="86" x2="12.7" y2="96"/>
@@ -208,9 +230,11 @@ h1{font-size:clamp(38px,8.4vw,92px);line-height:.95;font-weight:600;letter-spaci
         <path d="M620 98 V72 L634 63 V72 L648 63 V72 L662 63 V98 Z"/>
         <rect x="668" y="50" width="8" height="48"/>
       </g>
-      <path class="wave w1" d="M634 56 q-4 -5 0 -10 t0 -10"/>
-      <path class="wave w2" d="M650 56 q-4 -5 0 -10 t0 -10"/>
-      <path class="wave w3" d="M672 44 q-4 -5 0 -10 t0 -10"/>
+      <g class="waves">
+        <path class="wave w1" d="M634 56 q-4 -5 0 -10 t0 -10 t0 -10"/>
+        <path class="wave w2" d="M650 56 q-4 -5 0 -10 t0 -10 t0 -10"/>
+        <path class="wave w3" d="M672 44 q-4 -5 0 -10 t0 -10 t0 -10"/>
+      </g>
 
       <text x="68" y="52">Renewable energy in</text>
       <text x="472" y="16" text-anchor="middle">Radiated light</text>
@@ -400,9 +424,12 @@ h1{font-size:clamp(38px,8.4vw,92px);line-height:.95;font-weight:600;letter-spaci
       card.classList.toggle('lit', on);
     });
     resets.forEach(function (b) { b.disabled = n === 0; });
+    stage.classList.toggle('hot', n > 0);
   }
 
   var shown = AMBIENT, raf = 0;
+  var blades = document.getElementById('blades');
+  var angle = 0, omega = 0;   /* turbine angle in degrees and speed in degrees per second */
   function animateTo(target) {
     cancelAnimationFrame(raf);
     var charging = target > shown;
@@ -430,6 +457,7 @@ h1{font-size:clamp(38px,8.4vw,92px);line-height:.95;font-weight:600;letter-spaci
       save();
       paintState();
       animateTo(tempFor(opened.size));
+      omega = Math.min(omega + 220, 900);   /* each click gives the turbine a gust */
     }
   }
   main.addEventListener('click', onOpen);
@@ -443,6 +471,21 @@ h1{font-size:clamp(38px,8.4vw,92px);line-height:.95;font-weight:600;letter-spaci
       animateTo(AMBIENT);
     });
   });
+
+  /* Turbine: turns slowly at rest, and its speed rises with the charge. Clicks add a short extra gust. */
+  var lastFrame = null;
+  function spin(now) {
+    if (lastFrame === null) lastFrame = now;
+    var dt = Math.min(0.05, (now - lastFrame) / 1000);
+    lastFrame = now;
+    var level = Math.max(0, Math.min(1, (shown - AMBIENT) / (MAX_T - AMBIENT)));
+    var target = 18 + 620 * level;
+    omega += (target - omega) * (1 - Math.exp(-dt * 2.5));
+    angle = (angle + omega * dt) % 360;
+    blades.setAttribute('transform', 'rotate(' + angle.toFixed(1) + ' 30 86)');
+    requestAnimationFrame(spin);
+  }
+  if (!reduce) requestAnimationFrame(spin);
 
   /* Restore at rest */
   shown = tempFor(opened.size);
