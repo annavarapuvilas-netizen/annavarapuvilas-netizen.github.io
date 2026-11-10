@@ -41,7 +41,7 @@ a{color:inherit}
 /* Stage */
 .stage{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--carbon);color:var(--paper);overflow:hidden;border-bottom:1px solid rgba(255,255,255,.28)}
 .stage::before{content:"";position:absolute;inset:0;background:var(--core);opacity:calc(var(--glow)*.12);pointer-events:none}
-.stage .wrap{position:relative;display:grid;align-items:center;column-gap:24px;row-gap:6px;padding-top:12px;padding-bottom:12px;grid-template-columns:minmax(0,1fr) minmax(0,700px) minmax(0,1fr);grid-template-areas:"who core read"}
+.stage .wrap{position:relative;display:grid;align-items:center;column-gap:24px;row-gap:6px;padding-top:12px;padding-bottom:12px;grid-template-columns:minmax(0,1fr) minmax(0,740px) minmax(0,1fr);grid-template-areas:"who core read"}
 .who{grid-area:who;justify-self:start;display:flex;flex-direction:column;gap:3px;min-width:0}
 .who .nm{font-size:15px;line-height:18px;font-weight:600;letter-spacing:.07em;text-transform:uppercase}
 .who .rl{font-size:12px;line-height:16px;color:var(--mute-inv)}
@@ -149,7 +149,7 @@ h1{max-width:62ch;font-size:clamp(15px,1.6vw,17px);line-height:1.5;font-weight:4
 
 <div class="stage" id="stage">
   <div class="wrap">
-    <svg class="core" id="coreSvg" viewBox="0 0 700 120" role="img" aria-label="Renewable energy charging a carbon thermal battery at 25 degrees Celsius, with heat output at 25 degrees Celsius">
+    <svg class="core" id="coreSvg" viewBox="0 0 740 120" role="img" aria-label="Renewable energy charging a carbon thermal battery at 25 degrees Celsius, with heat output at 25 degrees Celsius">
       <defs>
         <filter id="blurWide" filterUnits="userSpaceOnUse" x="-240" y="-160" width="1180" height="440"><feGaussianBlur stdDeviation="26"/></filter>
         <filter id="blurNear" filterUnits="userSpaceOnUse" x="-240" y="-160" width="1180" height="440"><feGaussianBlur stdDeviation="9"/></filter>
@@ -200,12 +200,12 @@ h1{max-width:62ch;font-size:clamp(15px,1.6vw,17px);line-height:1.5;font-weight:4
       <rect class="fx" x="381" y="32" width="46" height="56"/>
 
       <g class="rays" stroke="#fff" stroke-width="1.5" stroke-dasharray="6 5" stroke-linecap="butt">
-        <line x1="445" y1="44" x2="500" y2="44"/>
-        <line x1="445" y1="60" x2="500" y2="60"/>
-        <line x1="445" y1="76" x2="500" y2="76"/>
+        <line x1="445" y1="44" x2="540" y2="44"/>
+        <line x1="445" y1="60" x2="540" y2="60"/>
+        <line x1="445" y1="76" x2="540" y2="76"/>
       </g>
 
-      <g class="outflow" stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="square" stroke-linejoin="miter">
+      <g transform="translate(40 0)"><g class="outflow" stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="square" stroke-linejoin="miter">
         <!-- heat exchanger -->
         <rect x="506" y="30" width="40" height="60"/>
         <path d="M514 42 H538 V54 H514 V66 H538 V78 H514"/>
@@ -221,12 +221,12 @@ h1{max-width:62ch;font-size:clamp(15px,1.6vw,17px);line-height:1.5;font-weight:4
         <path class="wave w1" d="M634 56 q-4 -5 0 -10 t0 -10 t0 -10"/>
         <path class="wave w2" d="M650 56 q-4 -5 0 -10 t0 -10 t0 -10"/>
         <path class="wave w3" d="M672 44 q-4 -5 0 -10 t0 -10 t0 -10"/>
-      </g>
+      </g></g>
 
       <text x="134.5" y="52" text-anchor="middle">Renewable energy in</text>
-      <text text-anchor="middle"><tspan x="472.5" y="28">Radiated</tspan><tspan x="472.5" y="38">light</tspan></text>
-      <text x="526" y="110" text-anchor="middle">Heat exchanger</text>
-      <text x="648" y="112" text-anchor="middle">Heat out</text>
+      <text x="492.5" y="38" text-anchor="middle">Radiated light</text>
+      <text x="566" y="110" text-anchor="middle">Heat exchanger</text>
+      <text x="688" y="112" text-anchor="middle">Heat out</text>
     </svg>
 
     <div class="who">
