@@ -363,16 +363,19 @@ section.riverside.band{overflow:clip}
 .gpi-policy.band{padding-block:clamp(32px,4.5vw,56px)}
 .gpi.band#path{padding-top:clamp(32px,4.5vw,56px)}
 .hero-bio{max-width:44rem;margin:clamp(28px,4vw,48px) 0 0;font:500 clamp(1.5rem,3vw,2.2rem)/1.25 var(--display);color:var(--ink)}
-.hero-path{list-style:none;margin:clamp(28px,4vw,44px) 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;position:relative}
+.hero-path{list-style:none;margin:clamp(28px,4vw,44px) 0 0;padding:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.85fr) minmax(0,1fr) minmax(0,1fr);gap:24px;position:relative}
 .hero-path::before{content:"";position:absolute;left:11px;right:11px;top:11px;border-top:2px dashed var(--terra)}
 .hero-path li{position:relative;padding-top:46px}
 .hero-path li::before{content:"";position:absolute;left:0;top:0;width:22px;height:22px;border-radius:50%;background:var(--terra);border:var(--line) solid var(--ink)}
 .hp-ic{display:block;height:76px;width:auto;margin:0 0 12px}
 .hero-path b{display:block;font:500 1.55rem/1.15 var(--display);margin:0 0 4px}
 .hero-path span{display:block;color:var(--mute);max-width:24rem}
-.hero-welcome{margin:clamp(20px,3vw,32px) 0 0;font:600 1.7rem/1.2 var(--hand);color:var(--terra)}
+.hero-path li.hp-mini{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:start;gap:4px;padding:0}
+.hero-path li.hp-mini::before{display:none}
+.hero-path .hp-mini span{position:relative;display:block;max-width:none;padding-top:30px;text-align:center;font:600 1.05rem/1.1 var(--hand);color:var(--mute)}
+.hero-path .hp-mini span::before{content:"";position:absolute;left:50%;top:6px;width:10px;height:10px;margin-left:-5px;border-radius:50%;background:var(--rose);border:var(--line) solid var(--ink)}
 @media(max-width:900px){.hero-story{padding-top:44px}}
-@media(max-width:700px){.hero-path{grid-template-columns:1fr;gap:26px}.hero-path::before{left:10px;right:auto;top:10px;bottom:10px;border-top:0;border-left:2px dashed var(--terra)}.hero-path li{padding:0 0 0 46px}.hp-ic{height:60px}}
+@media(max-width:700px){.hero-path{grid-template-columns:1fr;gap:26px}.hero-path::before{left:10px;right:auto;top:10px;bottom:10px;border-top:0;border-left:2px dashed var(--terra)}.hero-path li{padding:0 0 0 46px}.hp-ic{height:60px}.hero-path li.hp-mini{display:flex;flex-direction:column;gap:12px;padding:0}.hero-path .hp-mini span{text-align:left;padding:0 0 0 46px}.hero-path .hp-mini span::before{left:6px;top:3px;margin-left:0}}
 .creds{margin:-.3rem 0 1.5rem;font:600 1.5rem/1.2 var(--hand);color:var(--terra)}
 .creds a{color:inherit;text-underline-offset:4px;text-decoration-color:var(--terra)}
 </style>
@@ -433,13 +436,12 @@ section.riverside.band{overflow:clip}
 </div>
 </div>
 <div class="wrap hero-story">
-<p class="hero-bio">I’m an educator, facilitator, and a founder working on the clean energy transition and economic mobility.</p>
 <ol class="hero-path">
-<li><svg class="hp-ic" viewBox="0 0 96 80" aria-hidden="true" focusable="false"><g fill="none" stroke="#3a2d3c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="8" width="76" height="46" rx="4" fill="#dbe8d4"/><path d="M22 22 h30 M22 32 h44 M22 42 h22"/><path d="M14 60 h68"/><path d="M60 64 l16 -10 l5 8 l-16 10 z" fill="#fbe3a8"/><path d="M60 64 l5 8"/></g></svg><b>Teaching</b><span>Honed my communication skills teaching middle schoolers—the toughest audience out there.</span></li>
-<li><svg class="hp-ic" viewBox="0 0 140 140" aria-hidden="true" focusable="false"><use href="#cup"/></svg><b>Riverside Collective</b><span>Raised over 200k for a community coffeehouse that launched last year.</span></li>
-<li><svg class="hp-ic" viewBox="0 0 96 80" aria-hidden="true" focusable="false"><g fill="none" stroke="#3a2d3c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 72 C28 48 44 76 62 52 S86 30 90 34" stroke-width="13"/><path d="M8 72 C28 48 44 76 62 52 S86 30 90 34" stroke="#fff8f6" stroke-width="10"/><path d="M8 72 C28 48 44 76 62 52 S86 30 90 34" stroke="#c4635b" stroke-dasharray="5 6"/><path d="M62 30 c-9 -11 -9 -21 0 -26 c9 5 9 15 0 26 z" fill="#c4635b"/><circle cx="62" cy="17" r="2.8" fill="#fff8f6"/><path d="M16 22 l0 10 M11 27 l10 0" stroke="#c4635b"/></g></svg><b>Just Transition Plan</b><span>Convened over 20+ organizations to write Mississippi’s first.</span></li>
+<li><svg class="hp-ic" viewBox="0 0 96 80" aria-hidden="true" focusable="false"><g fill="none" stroke="#3a2d3c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="8" width="76" height="46" rx="4" fill="#dbe8d4"/><path d="M22 22 h30 M22 32 h44 M22 42 h22"/><path d="M14 60 h68"/><path d="M60 64 l16 -10 l5 8 l-16 10 z" fill="#fbe3a8"/><path d="M60 64 l5 8"/></g></svg><b>Teaching</b><span>I honed my communication skills teaching middle schoolers—the toughest audience out there.</span></li>
+<li class="hp-mini" aria-label="Along the way"><span>Barista</span><span>Tutor</span><span>Community organizer</span></li>
+<li><svg class="hp-ic" viewBox="0 0 140 140" aria-hidden="true" focusable="false"><use href="#cup"/></svg><b>Riverside Collective</b><span>I raised over 200k for a community coffeehouse that launched last year.</span></li>
+<li><svg class="hp-ic" viewBox="0 0 96 80" aria-hidden="true" focusable="false"><g fill="none" stroke="#3a2d3c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 72 C28 48 44 76 62 52 S86 30 90 34" stroke-width="13"/><path d="M8 72 C28 48 44 76 62 52 S86 30 90 34" stroke="#fff8f6" stroke-width="10"/><path d="M8 72 C28 48 44 76 62 52 S86 30 90 34" stroke="#c4635b" stroke-dasharray="5 6"/><path d="M62 30 c-9 -11 -9 -21 0 -26 c9 5 9 15 0 26 z" fill="#c4635b"/><circle cx="62" cy="17" r="2.8" fill="#fff8f6"/><path d="M16 22 l0 10 M11 27 l10 0" stroke="#c4635b"/></g></svg><b>Environmental Justice Fellow</b><span>I convened over 20 organizations to write Mississippi’s first Just Transition Plan.</span></li>
 </ol>
-<p class="hero-welcome">Welcome!</p>
 </div>
 </header>
 <section class="riverside band" id="riverside">
