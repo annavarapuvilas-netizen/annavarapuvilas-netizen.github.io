@@ -90,6 +90,7 @@ h1{max-width:34em;font-size:clamp(24px,3.1vw,38px);line-height:1.2;font-weight:6
 .sec-head h2{font-size:14px;line-height:18px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;white-space:nowrap}
 .sec-head .rule{flex:1 1 auto;height:1px;background:var(--ink)}
 .sec-head .n{font-size:14px;font-variant-numeric:tabular-nums;color:var(--mute)}
+.sec-text{max-width:76ch;margin:-2px 0 14px;font-size:15px;line-height:1.5;color:var(--mute)}
 .grid{display:grid;gap:12px;grid-template-columns:minmax(0,1fr)}
 .grid.dense{grid-template-columns:repeat(2,minmax(0,1fr))}
 
@@ -250,32 +251,32 @@ h1{max-width:34em;font-size:clamp(24px,3.1vw,38px);line-height:1.2;font-weight:6
 
   /* Edit this list to change the site. Sections appear in this order. */
   var SECTIONS = [
-    { id: 'antora', label: 'Antora-specific materials' },
-    { id: 'deck',   label: 'Slide decks' },
-    { id: 'video',  label: 'Videos' },
-    { id: 'writing',label: 'Writing' },
-    { id: 'social', label: 'Social media', dense: true }
+    { id: 'antora', label: 'Antora-specific materials', text: 'Antora’s design document is an easy visual guide for people unfamiliar with HeatCore and the Power Block. The policy memo is written for Antora’s C-suite and builds an argument for a set of recommendations.' },
+    { id: 'deck',   label: 'Slide decks', text: '“Gender in green finance for rural revitalization” emphasizes process. My team wanted UNDP China and our review panel to understand how we made choices in our research. “Equity and justice in critical mineral supply chains” and “Environmental justice fellowship lunch and learn” are decks built for presenting. Their emphasis on visuals helps the audience follow my storytelling. “Net-zero strategies for Mexico City” is a deck meant to be read, not presented. It builds an argument.' },
+    { id: 'video',  label: 'Videos', text: 'The Climate Learning Convening video is for carbon management professionals who want to understand the concerns of community members and learn about effective community engagement. The interviews at CO2NNECT highlight the audience’s experience. The Riverside Collective video is meant to increase volunteer involvement and raise philanthropic dollars.' },
+    { id: 'writing',label: 'Writing', text: 'The Riverside newsletters are personal and story-based, with the goal of making readers feel personally bought in to the project. The blog posts for the Carbon Action Alliance are informational and use narrative to uplift key messages. The Just Transition Plan uses bright colors, bold fonts and motifs to improve readability while explaining the process and communicating policy ideas.' },
+    { id: 'social', label: 'Social media', text: 'The reels are fun and playful, and they build excitement about an up-and-coming business. They feature the students, who are the heart of Riverside.', dense: true }
   ];
 
   var WORK = [
-    { s: 'antora', span2: true, kind: 'One-pager', title: 'How Antora Heat and Power work', desc: 'My one-page explainer of HeatCore and the Power Block, from rapid charging to firm power.', url: 'files/heat-and-power-one-page.pdf', cta: 'Open PDF' },
-    { s: 'antora', span2: true, kind: 'Memo', title: 'Strategies to maintain public support for energy projects', desc: 'Lessons from the ADM carbon storage leak in Decatur, Illinois, with three recommendations for Antora.', url: 'files/policy-memo-public-support-for-energy-projects.pdf', cta: 'Read memo' },
+    { s: 'antora', span2: true, kind: 'One-pager', title: 'How Antora Heat and Power work', url: 'files/heat-and-power-one-page.pdf', cta: 'Open PDF' },
+    { s: 'antora', span2: true, kind: 'Memo', title: 'Strategies to maintain public support for energy projects', url: 'files/policy-memo-public-support-for-energy-projects.pdf', cta: 'Read memo' },
 
-    { s: 'deck', kind: 'Deck', title: 'Net-zero strategies for Mexico City', desc: 'Gaps in the city’s Climate Action Plan, with proposals on mobility, geothermal energy and heat pumps.', url: 'files/net-zero-strategies-mexico-city.pdf', cta: 'Open deck' },
-    { s: 'deck', kind: 'Deck', title: 'Gender in green finance for rural revitalization', desc: 'Capstone for UNDP China, written with two teammates at Schwarzman College and defended in June 2026.', url: 'files/gender-in-green-finance-undp-china-capstone.pdf', cta: 'Open deck' },
-    { s: 'deck', kind: 'Deck', title: 'Equity and justice in critical mineral supply chains', desc: 'Co-authored deck on keeping the Global South from bearing the brunt of the energy transition.', url: 'files/equity-and-justice-in-critical-mineral-supply-chains.pdf', cta: 'Open deck' },
-    { s: 'deck', kind: 'Deck', title: 'Environmental justice fellowship lunch and learn', desc: 'How the Great Plains Institute fellowship works, plus Riverside Collective and my carbon management projects.', url: 'files/environmental-justice-fellowship-lunch-and-learn.pdf', cta: 'Open deck' },
+    { s: 'deck', kind: 'Deck', title: 'Gender in green finance for rural revitalization', url: 'files/gender-in-green-finance-undp-china-capstone.pdf', cta: 'Open deck' },
+    { s: 'deck', kind: 'Deck', title: 'Equity and justice in critical mineral supply chains', url: 'files/equity-and-justice-in-critical-mineral-supply-chains.pdf', cta: 'Open deck' },
+    { s: 'deck', kind: 'Deck', title: 'Environmental justice fellowship lunch and learn', url: 'files/environmental-justice-fellowship-lunch-and-learn.pdf', cta: 'Open deck' },
+    { s: 'deck', kind: 'Deck', title: 'Net-zero strategies for Mexico City', url: 'files/net-zero-strategies-mexico-city.pdf', cta: 'Open deck' },
 
-    { s: 'video', kind: 'Video', title: 'Climate Learning Convening recap', desc: 'Recap of the convening in Jackson with the Mississippi People’s Movement.', url: 'https://www.youtube.com/watch?v=8kkeWGY5qzw', cta: 'Watch video' },
-    { s: 'video', kind: 'Video', title: 'Riverside Collective, Community Impact Grantee', desc: 'The Community Foundation for Mississippi’s profile of Riverside.', url: 'https://www.youtube.com/watch?v=wLlSubw1nig', cta: 'Watch video' },
-    { s: 'video', kind: 'LinkedIn clip', title: 'Interviews at CO2NNECT, clip 1', desc: 'A clip from Carbon Action Alliance’s CO2NNECT, where I interview attendees.', url: 'https://lnkd.in/p/duqfvTEm', cta: 'Watch on LinkedIn' },
-    { s: 'video', kind: 'LinkedIn clip', title: 'Interviews at CO2NNECT, clip 2', desc: 'A second clip from CO2NNECT, where I interview attendees.', url: 'https://lnkd.in/p/dwBWmFSs', cta: 'Watch on LinkedIn' },
+    { s: 'video', kind: 'Video', title: 'Climate Learning Convening recap', url: 'https://www.youtube.com/watch?v=8kkeWGY5qzw', cta: 'Watch video' },
+    { s: 'video', kind: 'LinkedIn clip', title: 'Interviews at CO2NNECT, clip 1', url: 'https://lnkd.in/p/duqfvTEm', cta: 'Watch on LinkedIn' },
+    { s: 'video', kind: 'LinkedIn clip', title: 'Interviews at CO2NNECT, clip 2', url: 'https://lnkd.in/p/dwBWmFSs', cta: 'Watch on LinkedIn' },
+    { s: 'video', kind: 'Video', title: 'Riverside Collective, Community Impact Grantee', url: 'https://www.youtube.com/watch?v=wLlSubw1nig', cta: 'Watch video' },
 
-    { s: 'writing', span2: true, kind: 'Newsletter, latest', title: 'Riverside Collective June and July 2025 newsletter', desc: 'The coffeehouse opening on July 12, the community turnout and the handoff to Riverside’s new leader.', url: 'https://riversidecollective.org/mailpoet-email/b8256448ffca-riverside-collective-june-and-july-2025-newsletter/', cta: 'Read newsletter' },
-    { s: 'writing', kind: 'Archive', title: 'All Riverside newsletters', desc: 'Monthly updates from November 2023 to August 2025.', url: 'https://riversidecollective.org/aboutus/a-community-cooperative/', cta: 'Browse archive' },
-    { s: 'writing', kind: 'Blog, Dec 2024', title: 'What I learned from the Mississippi People’s Movement', desc: 'On climate education, long-term visioning and trust with a statewide network of local leaders.', url: 'https://carbonactionalliance.org/news-events/what-i-learned-from-the-mississippi-peoples-movement-aligning-climate-action-with-community-needs/', cta: 'Read post' },
-    { s: 'writing', kind: 'Blog, Jul 2024', title: 'Leveraging community benefit frameworks', desc: 'Takeaways from the National Academies conference.', url: 'https://carbonactionalliance.org/news-events/leveraging-community-benefit-frameworks-learnings-from-the-national-academies-conference/', cta: 'Read post' },
-    { s: 'writing', kind: 'Plan, Feb 2025', title: 'Mississippi Just Transition Plan', desc: 'A 24-page plan compiled with the Mississippi People’s Movement and the Great Plains Institute. I convened the organizations behind it.', url: 'files/mississippi-just-transition-plan.pdf', cta: 'Open PDF' },
+    { s: 'writing', span2: true, kind: 'Newsletter, latest', title: 'Riverside Collective June and July 2025 newsletter', url: 'https://riversidecollective.org/mailpoet-email/b8256448ffca-riverside-collective-june-and-july-2025-newsletter/', cta: 'Read newsletter' },
+    { s: 'writing', kind: 'Archive', title: 'All Riverside newsletters', url: 'https://riversidecollective.org/aboutus/a-community-cooperative/', cta: 'Browse archive' },
+    { s: 'writing', kind: 'Blog, Dec 2024', title: 'What I learned from the Mississippi People’s Movement', url: 'https://carbonactionalliance.org/news-events/what-i-learned-from-the-mississippi-peoples-movement-aligning-climate-action-with-community-needs/', cta: 'Read post' },
+    { s: 'writing', kind: 'Blog, Jul 2024', title: 'Leveraging community benefit frameworks', url: 'https://carbonactionalliance.org/news-events/leveraging-community-benefit-frameworks-learnings-from-the-national-academies-conference/', cta: 'Read post' },
+    { s: 'writing', kind: 'Plan, Feb 2025', title: 'Mississippi Just Transition Plan', url: 'files/mississippi-just-transition-plan.pdf', cta: 'Open PDF' },
 
     { s: 'social', compact: true, kind: 'Instagram', title: 'Reel 1', url: 'https://www.instagram.com/reel/DB9GrCRuUMY/', cta: 'Watch reel' },
     { s: 'social', compact: true, kind: 'Instagram', title: 'Reel 2', url: 'https://www.instagram.com/reel/DGje9glOspe/', cta: 'Watch reel' },
@@ -351,11 +352,11 @@ h1{max-width:34em;font-size:clamp(24px,3.1vw,38px);line-height:1.2;font-weight:6
   SECTIONS.forEach(function (sec) {
     var items = WORK.filter(function (w) { return w.s === sec.id; });
     if (!items.length) return;
-    html += '<section class="group"><div class="wrap"><div class="sec-head"><h2>' + esc(sec.label) + '</h2><span class="rule"></span><span class="n">' + items.length + '</span></div><div class="grid' + (sec.dense ? ' dense' : '') + '">';
+    html += '<section class="group"><div class="wrap"><div class="sec-head"><h2>' + esc(sec.label) + '</h2><span class="rule"></span><span class="n">' + items.length + '</span></div>' + (sec.text ? '<p class="sec-text">' + esc(sec.text) + '</p>' : '') + '<div class="grid' + (sec.dense ? ' dense' : '') + '">';
     items.forEach(function (w) {
       html += '<a class="card' + (w.span2 ? ' span2' : '') + (w.compact ? ' compact' : '') + '" data-id="' + w.id + '" style="--pos:' + w.pos.toFixed(3) + ';--lit-rgb:' + w.rgb + '" href="' + esc(w.url) + '" target="_blank" rel="noopener">' +
         '<div class="card-top"><span class="kind">' + esc(w.kind) + '</span><span class="tag">+1 charge</span></div>' +
-        '<h3>' + esc(w.title) + '</h3>' + (w.desc ? '<p>' + esc(w.desc) + '</p>' : '') +
+        '<h3>' + esc(w.title) + '</h3>' +
         '<span class="go">' + esc(w.cta) + ' ' + ARROW + '</span></a>';
     });
     html += '</div></div></section>';
