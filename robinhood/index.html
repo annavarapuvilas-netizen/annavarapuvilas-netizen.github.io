@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>Vilas Annavarapu Work Samples</title>
+<meta name="description" content="Examples of past work from Vilas Annavarapu: a policy memo, slide decks, blog posts, newsletters and social media content.">
+<meta property="og:title" content="Vilas Annavarapu Work Samples">
+<meta property="og:description" content="Examples of past work, each tailored for a different audience.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230b0b0b'/%3E%3Crect x='6' y='9' width='20' height='14' fill='%23F2DC6D'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;600&display=swap">
+<style>
+/* Layout: a sticky dark stage shows a speaker and an audience that grows as links are opened. Below, compact white cards in four groups. A card that has been opened glows softly, and the glow grows stronger the lower the card sits on the page. */
+:root{
+  --ink:#000;
+  --paper:#fff;
+  --carbon:#0b0b0b;
+  --sun:#F2DC6D;
+  --mute:rgba(0,0,0,.62);
+  --mute-inv:rgba(255,255,255,.68);
+  --core:#1a1d1e;
+  --glow:0;
+  --heat:0;
+  --font:"Pilat","Inter Tight","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.35;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--carbon)}
+h1,h2,h3,p{margin:0}
+a{color:inherit}
+
+.wrap{width:100%;max-width:1264px;margin-left:auto;margin-right:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.eyebrow{font-size:12px;line-height:16px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+
+/* Stage */
+.stage{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--carbon);color:var(--paper);overflow:hidden;border-bottom:1px solid rgba(255,255,255,.28)}
+.stage .wrap{position:relative;display:grid;align-items:center;column-gap:24px;row-gap:6px;padding-top:12px;padding-bottom:12px;grid-template-columns:minmax(0,1fr) minmax(0,740px) minmax(0,1fr);grid-template-areas:"who core read"}
+.who{grid-area:who;justify-self:start;display:flex;flex-direction:column;gap:3px;min-width:0}
+.who .nm{font-size:15px;line-height:18px;font-weight:600;letter-spacing:.07em;text-transform:uppercase}
+.who .rl{font-size:12px;line-height:16px;color:var(--mute-inv)}
+.who a{align-self:flex-start;margin-top:3px;font-size:12px;line-height:16px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--paper);text-decoration:none;border-bottom:1px solid var(--sun);padding-bottom:1px}
+.who a:hover,.who a:focus-visible{color:var(--sun)}
+.core{grid-area:core;width:100%;height:auto;overflow:visible;display:block}
+.read{grid-area:read;justify-self:end;width:100%;max-width:260px;display:flex;flex-direction:column;align-items:flex-end;gap:6px;min-width:0}
+.count{font-size:12px;line-height:16px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute-inv);text-align:right}
+
+/* Diagram: a speaker on a platform and an audience that fills in, one person per link opened */
+.core line,.core path,.core circle{vector-effect:non-scaling-stroke;fill:none;stroke:#fff;stroke-width:1.5;stroke-linecap:round}
+.core .floor{stroke:rgba(255,255,255,.35);stroke-dasharray:2 6}
+.core .head{fill:var(--carbon)}
+.core .arm-up{transform-origin:var(--ox) var(--oy);animation:gesture 2.8s ease-in-out infinite}
+.core .snd{animation:speak 2.4s ease-in-out infinite;opacity:.2}
+.core .s2{animation-delay:.35s}
+.core .s3{animation-delay:.7s}
+.core .fig{opacity:0;transform:translateY(10px);transition:opacity .6s ease,transform .6s ease}
+.core .fig.on{opacity:1;transform:none}
+.core .fig line,.core .fig circle{transition:stroke .9s ease}
+.core .fig.new line,.core .fig.new circle{stroke:var(--sun);transition:none}
+@keyframes gesture{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(10deg)}}
+@keyframes speak{0%{opacity:.15}35%{opacity:.95}100%{opacity:.15}}
+
+/* Hero */
+.hero .wrap{padding-top:clamp(28px,5vw,56px);padding-bottom:clamp(20px,3vw,32px)}
+.hero .eyebrow{color:var(--mute);margin-bottom:18px}
+h1{max-width:62ch;font-size:clamp(15px,1.6vw,17px);line-height:1.5;font-weight:400;letter-spacing:0;text-wrap:pretty}
+.lede{margin-top:20px;max-width:62ch;font-size:clamp(15px,1.6vw,17px);line-height:1.45;color:var(--mute)}
+
+/* Sections */
+.group .wrap{padding-top:36px;padding-bottom:30px}
+.sec-head{display:flex;align-items:center;gap:16px;margin-bottom:14px}
+.sec-head h2::before{content:"";display:inline-block;width:28px;height:10px;margin-right:12px;background:var(--sun);border:1px solid var(--ink);vertical-align:1px}
+.sec-head h2{font-size:18px;line-height:22px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;white-space:nowrap}
+.sec-head .rule{flex:1 1 auto;height:3px;background:var(--ink)}
+.sec-head .n{font-size:16px;font-weight:600;font-variant-numeric:tabular-nums;color:var(--mute)}
+.sec-text strong{font-weight:600;color:var(--ink)}
+.sec-text{margin:0 0 14px;font-size:15px;line-height:1.5;color:var(--mute)}
+.grid{display:grid;gap:12px;grid-template-columns:minmax(0,1fr)}
+.grid.dense{grid-template-columns:repeat(2,minmax(0,1fr))}
+
+/* Cards: tight, and lit from within once opened. --pos runs from 0 (top of page) to 1 (bottom). */
+.card{position:relative;display:flex;flex-direction:column;gap:7px;min-width:0;padding:13px 15px;border:1px solid var(--ink);background:var(--paper);color:var(--ink);text-decoration:none;box-shadow:0 0 0 0 rgba(var(--lit-rgb,0,0,0),0);transition:background .15s,color .15s,box-shadow .9s ease}
+.card::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .9s ease;background:radial-gradient(130% 150% at 50% 115%, rgba(var(--lit-rgb,0,0,0), calc(.16 + var(--pos,0)*.5)) 0%, rgba(var(--lit-rgb,0,0,0), 0) 72%)}
+.card.lit{box-shadow:0 0 calc(12px + var(--pos,0)*32px) calc(var(--pos,0)*3px) rgba(var(--lit-rgb,0,0,0), calc(.22 + var(--pos,0)*.5))}
+.card.lit::after{opacity:1}
+.card:hover,.card:focus-visible{background:var(--ink);color:var(--paper)}
+.card:hover::after,.card:focus-visible::after{opacity:0}
+.card:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.card-top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.kind{font-size:11px;line-height:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;opacity:.62}
+.tag{flex:none;font-size:10px;line-height:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:2px 6px;border:1px solid currentColor;white-space:nowrap}
+.tag.on{background:var(--sun);border-color:var(--sun);color:var(--ink)}
+.card h3{font-size:17px;line-height:19px;font-weight:600;letter-spacing:-.005em;text-transform:uppercase;text-wrap:balance}
+.card p{font-size:14px;line-height:1.4}
+.go{margin-top:auto;padding-top:2px;display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600}
+.go svg{width:12px;height:12px;flex:none}
+.card.compact{padding:11px 14px;gap:5px}
+
+.foot .wrap{padding-top:12px;padding-bottom:48px}
+.foot p{max-width:76ch;font-size:13px;line-height:1.5;color:var(--mute)}
+
+@media (min-width:640px){
+  .grid,.grid.dense{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .card.span2{grid-column:span 2}
+}
+@media (min-width:1040px){
+  .grid,.grid.dense{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+
+@media (max-width:759px){
+  .stage .wrap{grid-template-columns:minmax(0,1fr);grid-template-areas:"core" "read";row-gap:6px;padding-top:8px;padding-bottom:8px}
+  .who{display:none}
+  .core{max-height:62px}
+  .read{max-width:none;flex-direction:row;align-items:center;justify-content:flex-end;gap:12px}
+  .count{white-space:nowrap;font-size:11px;line-height:14px;letter-spacing:.06em}
+}
+@media (prefers-reduced-motion:reduce){
+  .card,.card::after{transition:none}
+  .core .arm-up,.core .snd{animation:none}
+  .core .snd{opacity:.7}
+  .core .fig{transition:none}
+}
+</style>
+</head>
+<body>
+
+<div class="stage" id="stage">
+  <div class="wrap">
+    <svg class="core" id="coreSvg" viewBox="0 0 740 120" role="img" aria-label="A speaker addressing an audience of 0 people">
+      <line class="floor" x1="10" y1="108" x2="730" y2="108"/>
+      <g id="speaker"><circle class="head" cx="62" cy="39.0" r="10.3"/><line x1="62" y1="49.4" x2="62" y2="80.4"/><line x1="62" y1="80.4" x2="50.5" y2="108"/><line x1="62" y1="80.4" x2="73.5" y2="108"/><line x1="62" y1="57.4" x2="47.0" y2="75.8"/><line class="arm-up" style="--ox:62px;--oy:57.4px" x1="62" y1="57.4" x2="80.4" y2="43.6"/><path class="snd s1" d="M81.6 34.3 A7 7 0 0 1 81.6 43.7"/><path class="snd s2" d="M86.0 30.3 A13 13 0 0 1 86.0 47.7"/><path class="snd s3" d="M90.5 26.3 A19 19 0 0 1 90.5 51.7"/></g>
+      <g id="crowd">
+        <g class="fig"><circle class="head" cx="128.0" cy="78.0" r="4.5"/><line x1="128.0" y1="82.5" x2="128.0" y2="96.0"/><line x1="128.0" y1="96.0" x2="122.7" y2="108.0"/><line x1="128.0" y1="96.0" x2="133.3" y2="108.0"/><line x1="128.0" y1="86.0" x2="121.1" y2="94.0"/><line x1="128.0" y1="86.0" x2="134.9" y2="94.0"/></g>
+        <g class="fig"><circle class="head" cx="156.6" cy="61.4" r="3.7"/><line x1="156.6" y1="65.1" x2="156.6" y2="76.2"/><line x1="156.6" y1="76.2" x2="152.3" y2="86.0"/><line x1="156.6" y1="76.2" x2="161.0" y2="86.0"/><line x1="156.6" y1="68.0" x2="151.0" y2="74.5"/><line x1="156.6" y1="68.0" x2="162.2" y2="74.5"/></g>
+        <g class="fig"><circle class="head" cx="185.2" cy="78.0" r="4.5"/><line x1="185.2" y1="82.5" x2="185.2" y2="96.0"/><line x1="185.2" y1="96.0" x2="179.9" y2="108.0"/><line x1="185.2" y1="96.0" x2="190.5" y2="108.0"/><line x1="185.2" y1="86.0" x2="178.3" y2="94.0"/><line x1="185.2" y1="86.0" x2="192.1" y2="94.0"/></g>
+        <g class="fig"><circle class="head" cx="213.9" cy="61.4" r="3.7"/><line x1="213.9" y1="65.1" x2="213.9" y2="76.2"/><line x1="213.9" y1="76.2" x2="209.5" y2="86.0"/><line x1="213.9" y1="76.2" x2="218.2" y2="86.0"/><line x1="213.9" y1="68.0" x2="208.2" y2="74.5"/><line x1="213.9" y1="68.0" x2="219.5" y2="74.5"/></g>
+        <g class="fig"><circle class="head" cx="242.5" cy="78.0" r="4.5"/><line x1="242.5" y1="82.5" x2="242.5" y2="96.0"/><line x1="242.5" y1="96.0" x2="237.2" y2="108.0"/><line x1="242.5" y1="96.0" x2="247.8" y2="108.0"/><line x1="242.5" y1="86.0" x2="235.6" y2="94.0"/><line x1="242.5" y1="86.0" x2="249.4" y2="94.0"/></g>
+        <g class="fig"><circle class="head" cx="271.1" cy="61.4" r="3.7"/><line x1="271.1" y1="65.1" x2="271.1" y2="76.2"/><line x1="271.1" y1="76.2" x2="266.8" y2="86.0"/><line x1="271.1" y1="76.2" x2="275.4" y2="86.0"/><line x1="271.1" y1="68.0" x2="265.5" y2="74.5"/><line x1="271.1" y1="68.0" x2="276.7" y2="74.5"/></g>
+        <g class="fig"><circle class="head" cx="299.7" cy="78.0" r="4.5"/><line x1="299.7" y1="82.5" x2="299.7" y2="96.0"/><line x1="299.7" y1="96.0" x2="294.4" y2="108.0"/><line x1="299.7" y1="96.0" x2="305.0" y2="108.0"/><line x1="299.7" y1="86.0" x2="292.8" y2="94.0"/><line x1="299.7" y1="86.0" x2="306.6" y2="94.0"/></g>
+        <g class="fig"><circle class="head" cx="328.3" cy="61.4" r="3.7"/><line x1="328.3" y1="65.1" x2="328.3" y2="76.2"/><line x1="328.3" y1="76.2" x2="324.0" y2="86.0"/><line x1="328.3" y1="76.2" x2="332.7" y2="86.0"/><line x1="328.3" y1="68.0" x2="322.7" y2="74.5"/><line x1="328.3" y1="68.0" x2="334.0" y2="74.5"/></g>
+        <g class="fig"><circle class="head" cx="357.0" cy="78.0" r="4.5"/><line x1="357.0" y1="82.5" x2="357.0" y2="96.0"/><line x1="357.0" y1="96.0" x2="351.7" y2="108.0"/><line x1="357.0" y1="96.0" x2="362.3" y2="108.0"/><line x1="357.0" y1="86.0" x2="350.1" y2="94.0"/><line x1="357.0" y1="86.0" x2="363.9" y2="94.0"/></g>
+        <g class="fig"><circle class="head" cx="385.6" cy="61.4" r="3.7"/><line x1="385.6" y1="65.1" x2="385.6" y2="76.2"/><line x1="385.6" y1="76.2" x2="381.2" y2="86.0"/><line x1="385.6" y1="76.2" x2="389.9" y2="86.0"/><line x1="385.6" y1="68.0" x2="380.0" y2="74.5"/><line x1="385.6" y1="68.0" x2="391.2" y2="74.5"/></g>
+        <g class="fig"><circle class="head" cx="414.2" cy="78.0" r="4.5"/><line x1="414.2" y1="82.5" x2="414.2" y2="96.0"/><line x1="414.2" y1="96.0" x2="408.9" y2="108.0"/><line x1="414.2" y1="96.0" x2="419.5" y2="108.0"/><line x1="414.2" y1="86.0" x2="407.3" y2="94.0"/><line x1="414.2" y1="86.0" x2="421.1" y2="94.0"/></g>
+        <g class="fig"><circle class="head" cx="442.8" cy="61.4" r="3.7"/><line x1="442.8" y1="65.1" x2="442.8" y2="76.2"/><line x1="442.8" y1="76.2" x2="438.5" y2="86.0"/><line x1="442.8" y1="76.2" x2="447.2" y2="86.0"/><line x1="442.8" y1="68.0" x2="437.2" y2="74.5"/><line x1="442.8" y1="68.0" x2="448.4" y2="74.5"/></g>
+        <g class="fig"><circle class="head" cx="471.4" cy="78.0" r="4.5"/><line x1="471.4" y1="82.5" x2="471.4" y2="96.0"/><line x1="471.4" y1="96.0" x2="466.1" y2="108.0"/><line x1="471.4" y1="96.0" x2="476.7" y2="108.0"/><line x1="471.4" y1="86.0" x2="464.6" y2="94.0"/><line x1="471.4" y1="86.0" x2="478.3" y2="94.0"/></g>
+        <g class="fig"><circle class="head" cx="500.1" cy="61.4" r="3.7"/><line x1="500.1" y1="65.1" x2="500.1" y2="76.2"/><line x1="500.1" y1="76.2" x2="495.7" y2="86.0"/><line x1="500.1" y1="76.2" x2="504.4" y2="86.0"/><line x1="500.1" y1="68.0" x2="494.4" y2="74.5"/><line x1="500.1" y1="68.0" x2="505.7" y2="74.5"/></g>
+        <g class="fig"><circle class="head" cx="528.7" cy="78.0" r="4.5"/><line x1="528.7" y1="82.5" x2="528.7" y2="96.0"/><line x1="528.7" y1="96.0" x2="523.4" y2="108.0"/><line x1="528.7" y1="96.0" x2="534.0" y2="108.0"/><line x1="528.7" y1="86.0" x2="521.8" y2="94.0"/><line x1="528.7" y1="86.0" x2="535.6" y2="94.0"/></g>
+        <g class="fig"><circle class="head" cx="557.3" cy="61.4" r="3.7"/><line x1="557.3" y1="65.1" x2="557.3" y2="76.2"/><line x1="557.3" y1="76.2" x2="553.0" y2="86.0"/><line x1="557.3" y1="76.2" x2="561.6" y2="86.0"/><line x1="557.3" y1="68.0" x2="551.7" y2="74.5"/><line x1="557.3" y1="68.0" x2="562.9" y2="74.5"/></g>
+        <g class="fig"><circle class="head" cx="585.9" cy="78.0" r="4.5"/><line x1="585.9" y1="82.5" x2="585.9" y2="96.0"/><line x1="585.9" y1="96.0" x2="580.6" y2="108.0"/><line x1="585.9" y1="96.0" x2="591.2" y2="108.0"/><line x1="585.9" y1="86.0" x2="579.0" y2="94.0"/><line x1="585.9" y1="86.0" x2="592.8" y2="94.0"/></g>
+        <g class="fig"><circle class="head" cx="614.5" cy="61.4" r="3.7"/><line x1="614.5" y1="65.1" x2="614.5" y2="76.2"/><line x1="614.5" y1="76.2" x2="610.2" y2="86.0"/><line x1="614.5" y1="76.2" x2="618.9" y2="86.0"/><line x1="614.5" y1="68.0" x2="608.9" y2="74.5"/><line x1="614.5" y1="68.0" x2="620.2" y2="74.5"/></g>
+        <g class="fig"><circle class="head" cx="643.2" cy="78.0" r="4.5"/><line x1="643.2" y1="82.5" x2="643.2" y2="96.0"/><line x1="643.2" y1="96.0" x2="637.9" y2="108.0"/><line x1="643.2" y1="96.0" x2="648.5" y2="108.0"/><line x1="643.2" y1="86.0" x2="636.3" y2="94.0"/><line x1="643.2" y1="86.0" x2="650.1" y2="94.0"/></g>
+        <g class="fig"><circle class="head" cx="671.8" cy="61.4" r="3.7"/><line x1="671.8" y1="65.1" x2="671.8" y2="76.2"/><line x1="671.8" y1="76.2" x2="667.4" y2="86.0"/><line x1="671.8" y1="76.2" x2="676.1" y2="86.0"/><line x1="671.8" y1="68.0" x2="666.2" y2="74.5"/><line x1="671.8" y1="68.0" x2="677.4" y2="74.5"/></g>
+      </g>
+    </svg>
+
+    <div class="who">
+      <span class="nm">Vilas Annavarapu</span>
+      <span class="rl">Content work</span>
+      <a href="https://www.linkedin.com/in/vilas-annavarapu-08a2ab22a/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+
+    <div class="read">
+      <p class="count" id="count" role="status">0 in the audience</p>
+    </div>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>In this site, you will find examples of my past work. I've included a policy memo, slide decks, blog posts, newsletters, videos and social media content. Each piece is tailored for a different audience and I change my presentation style accordingly. Thank you!</h1>
+  </div>
+</header>
+
+<main id="main"></main>
+
+
+<script>
+(function () {
+  /* Edit this list to change the site. Sections appear in this order. */
+  var SECTIONS = [
+    { id: 'writing',label: 'Writing', text: 'In the **blog posts** for the Carbon Action Alliance, I use personal narrative to share my on-the-ground experience in Mississippi. My **takeaways from conferences** take a more informational tone. I use bright colors, bold fonts, and motifs in the **Just Transition Plan** to distinguish it from common report formats. The **Riverside newsletters** are personal and story-based with the goal of making readers feel personally attached to the project.' },
+    { id: 'deck',   label: 'Slide decks', text: '**“Gender in green finance for rural revitalization”** emphasizes process. My team wanted UNDP China and our review panel to understand how we made research choices. The **“Equity and Justice in Critical Mineral Supply Chains”** and **“Environmental Justice Fellowship Lunch and Learn”** are decks built for presenting. The visuals are complements to my storytelling. **“Net-zero strategies for Mexico City”** is a deck meant to be read, not presented. It builds an argument.' },
+    { id: 'video',  label: 'Videos', text: 'The **Climate Learning Convening video** is for Carbon Management professionals to understand the concerns of community members and learn about effective engagement work. The **interviews at CO2NNECT** highlight the audience experience. The **Riverside Collective video** is meant to increase volunteer involvement and raise philanthropic dollars.' },
+    { id: 'social', label: 'Social media', text: 'The **reels** are fun, playful, and build excitement about an up-and-coming business. They feature the students, who are the heart of Riverside.', dense: true }
+  ];
+
+  var WORK = [
+    { s: 'writing', span2: true, kind: 'Policy memo', title: 'Strategies to maintain public support for energy projects', url: 'files/policy-memo-public-support-for-energy-projects.pdf', cta: 'Read memo' },
+    { s: 'writing', kind: 'Blog, Dec 2024', title: 'What I learned from the Mississippi People’s Movement', url: 'https://carbonactionalliance.org/news-events/what-i-learned-from-the-mississippi-peoples-movement-aligning-climate-action-with-community-needs/', cta: 'Read post' },
+    { s: 'writing', kind: 'Blog, Jul 2024', title: 'Leveraging community benefit frameworks', url: 'https://carbonactionalliance.org/news-events/leveraging-community-benefit-frameworks-learnings-from-the-national-academies-conference/', cta: 'Read post' },
+    { s: 'writing', kind: 'Plan, Feb 2025', title: 'Mississippi Just Transition Plan', url: 'files/mississippi-just-transition-plan.pdf', cta: 'Open PDF' },
+    { s: 'writing', span2: true, kind: 'Newsletter, latest', title: 'Riverside Collective June and July 2025 newsletter', url: 'https://riversidecollective.org/mailpoet-email/b8256448ffca-riverside-collective-june-and-july-2025-newsletter/', cta: 'Read newsletter' },
+    { s: 'writing', kind: 'Archive', title: 'All Riverside newsletters', url: 'https://riversidecollective.org/aboutus/a-community-cooperative/', cta: 'Browse archive' },
+    { s: 'deck', kind: 'Deck', title: 'Gender in green finance for rural revitalization', url: 'files/gender-in-green-finance-undp-china-capstone.pdf', cta: 'Open deck' },
+    { s: 'deck', kind: 'Deck', title: 'Equity and justice in critical mineral supply chains', url: 'files/equity-and-justice-in-critical-mineral-supply-chains.pdf', cta: 'Open deck' },
+    { s: 'deck', kind: 'Deck', title: 'Environmental justice fellowship lunch and learn', url: 'files/environmental-justice-fellowship-lunch-and-learn.pdf', cta: 'Open deck' },
+    { s: 'deck', kind: 'Deck', title: 'Net-zero strategies for Mexico City', url: 'files/net-zero-strategies-mexico-city.pdf', cta: 'Open deck' },
+    { s: 'video', kind: 'Video', title: 'Climate Learning Convening recap', url: 'https://www.youtube.com/watch?v=8kkeWGY5qzw', cta: 'Watch video' },
+    { s: 'video', kind: 'LinkedIn clip', title: 'Interviews at CO2NNECT, clip 1', url: 'https://lnkd.in/p/duqfvTEm', cta: 'Watch on LinkedIn' },
+    { s: 'video', kind: 'LinkedIn clip', title: 'Interviews at CO2NNECT, clip 2', url: 'https://lnkd.in/p/dwBWmFSs', cta: 'Watch on LinkedIn' },
+    { s: 'video', kind: 'Video', title: 'Riverside Collective, Community Impact Grantee', url: 'https://www.youtube.com/watch?v=wLlSubw1nig', cta: 'Watch video' },
+    { s: 'social', compact: true, kind: 'Instagram', title: 'Reel 1', url: 'https://www.instagram.com/reel/DB9GrCRuUMY/', cta: 'Watch reel' },
+    { s: 'social', compact: true, kind: 'Instagram', title: 'Reel 2', url: 'https://www.instagram.com/reel/DGje9glOspe/', cta: 'Watch reel' },
+    { s: 'social', compact: true, kind: 'Instagram', title: 'Reel 3', url: 'https://www.instagram.com/reel/DDlA1qgOT5F/', cta: 'Watch reel' },
+    { s: 'social', compact: true, kind: 'Instagram', title: 'Reel 4', url: 'https://www.instagram.com/reel/DCsLCJcuVSN/', cta: 'Watch reel' },
+    { s: 'social', compact: true, kind: 'Instagram', title: 'Reel 5', url: 'https://www.instagram.com/reel/DCdZr4LuRoj/', cta: 'Watch reel' },
+    { s: 'social', compact: true, kind: 'Instagram', title: 'Reel 6', url: 'https://www.instagram.com/reel/DCXRE-DxBj_/', cta: 'Watch reel' }
+  ];
+
+
+  var STORE_KEY = 'vilas-robinhood-opened-v1';
+  var ARROW = '<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" aria-hidden="true"><path d="M2 12 L12 2 M5 2 H12 V9"/></svg>';
+
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; });
+  }
+
+  var total = WORK.length;
+  /* Each card gets a glow strength from its place on the page: soft near the top, strongest at the bottom */
+  WORK.forEach(function (w, i) {
+    w.id = 'w' + i;
+    w.pos = total > 1 ? i / (total - 1) : 1;
+    w.rgb = '236,200,60';
+  });
+
+  var countEl = document.getElementById('count');
+  var svg = document.getElementById('coreSvg');
+  var main = document.getElementById('main');
+  var figs = Array.prototype.slice.call(document.querySelectorAll('#crowd .fig'));
+
+  /* Opened links, remembered in this browser */
+  var opened = new Set();
+  try {
+    var saved = JSON.parse(localStorage.getItem(STORE_KEY) || '[]');
+    saved.forEach(function (id) { if (WORK.some(function (w) { return w.id === id; })) opened.add(id); });
+  } catch (e) {}
+  function save() {
+    try { localStorage.setItem(STORE_KEY, JSON.stringify(Array.from(opened))); } catch (e) {}
+  }
+
+  /* Build the cards */
+  var html = '';
+  SECTIONS.forEach(function (sec) {
+    var items = WORK.filter(function (w) { return w.s === sec.id; });
+    if (!items.length) return;
+    html += '<section class="group"><div class="wrap"><div class="sec-head"><h2>' + esc(sec.label) + '</h2><span class="rule"></span><span class="n">' + items.length + '</span></div>' + (sec.text ? '<p class="sec-text">' + esc(sec.text).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>') + '</p>' : '') + '<div class="grid' + (sec.dense ? ' dense' : '') + '">';
+    items.forEach(function (w) {
+      html += '<a class="card' + (w.span2 ? ' span2' : '') + (w.compact ? ' compact' : '') + '" data-id="' + w.id + '" style="--pos:' + w.pos.toFixed(3) + ';--lit-rgb:' + w.rgb + '" href="' + esc(w.url) + '" target="_blank" rel="noopener">' +
+        '<div class="card-top"><span class="kind">' + esc(w.kind) + '</span><span class="tag">+1 listener</span></div>' +
+        '<h3>' + esc(w.title) + '</h3>' +
+        '<span class="go">' + esc(w.cta) + ' ' + ARROW + '</span></a>';
+    });
+    html += '</div></div></section>';
+  });
+  main.innerHTML = html;
+
+  /* One person joins the audience for every link opened */
+  function paintState(newest) {
+    var n = opened.size;
+    countEl.textContent = n + ' in the audience';
+    svg.setAttribute('aria-label', 'A speaker addressing an audience of ' + n + (n === 1 ? ' person' : ' people'));
+    figs.forEach(function (f, i) { f.classList.toggle('on', i < n); });
+    if (newest && figs[n - 1]) {
+      var f = figs[n - 1];
+      f.classList.add('new');
+      setTimeout(function () { f.classList.remove('new'); }, 1400);
+    }
+    Array.prototype.forEach.call(document.querySelectorAll('.card'), function (card) {
+      var on = opened.has(card.getAttribute('data-id'));
+      var tag = card.querySelector('.tag');
+      tag.textContent = on ? 'Listening' : '+1 listener';
+      tag.className = on ? 'tag on' : 'tag';
+      card.classList.toggle('lit', on);
+    });
+  }
+
+  function onOpen(e) {
+    var card = e.target.closest ? e.target.closest('.card') : null;
+    if (!card) return;
+    var id = card.getAttribute('data-id');
+    if (!opened.has(id)) {
+      opened.add(id);
+      save();
+      paintState(true);
+    }
+  }
+  main.addEventListener('click', onOpen);
+  main.addEventListener('auxclick', onOpen);
+
+  paintState(false);
+})();
+</script>
+</body>
+</html>
